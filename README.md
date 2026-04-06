@@ -8,8 +8,9 @@ Static HTML marketing landers for **Lazaderm**—location-focused campaigns and 
 |------|-----|--------|
 | **Index** | [`index.html`](index.html) | Internal directory of all landers (`noindex`). |
 | **Location landings** | — | e.g. `chandler-landing.html`, `fargo-nd-landing.html`, `sioux-falls-sd-landing.html`, `sioux-city-ia-landing.html`, `watertown-sd-landing.html` |
+| **Location template** | — | [`location-landing-template.html`](location-landing-template.html) — duplicate to start a new location page |
 | **Procedure landings** | — | e.g. `coolsculpting-elite-landing.html`, `dermal-fillers-landing.html`, `hair-tattoo-removal-landing.html`, `laser-treatments-landing.html` |
-| **Template** | — | [`procedure-landing-template.html`](procedure-landing-template.html) — duplicate to start a new procedure page |
+| **Procedure template** | — | [`procedure-landing-template.html`](procedure-landing-template.html) — duplicate to start a new procedure page |
 
 Markdown briefs (`Lazaderm_L_*_BH.md`) sit alongside the HTML and hold copy/source of truth for new or updated pages.
 
@@ -23,6 +24,13 @@ python3 -m http.server 8080
 ```
 
 Then visit `http://localhost:8080/` (start from `index.html` if you want the directory).
+
+## Adding a new location landing
+
+1. Copy `location-landing-template.html` to a new file (e.g. `springfield-mo-landing.html`).
+2. Remove `<meta name="robots" content="noindex, nofollow">` when the page is ready for production search indexing.
+3. Replace placeholders with copy from your location brief (hero, treatments grid, providers, FAQs, phone, booking links).
+4. Add a card linking to the new file in `index.html` under **Location landings**.
 
 ## Adding a new procedure landing
 
