@@ -1,0 +1,1960 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description"
+    content="Lazaderm in Fargo, ND offers a full-service medical spa with injectables, lasers, body contouring, and vein care. Physician-led team. Book your consultation today." />
+  <title>Medical Spa Treatments in Fargo, ND | Lazaderm</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=M+PLUS+Rounded+1c:wght@300;400;500;700&display=swap"
+    rel="stylesheet" />
+  <style>
+    /* ============================================================
+       DESIGN TOKENS — Lazaderm brand
+    ============================================================ */
+    :root {
+      --plum: #473359;
+      --plum-dark: #342548;
+      --plum-mid: #5a4270;
+      --blue-gray: #4D738A;
+      --blue-gray-lt: #e8eef2;
+      --fg: #1a1a1a;
+      --fg-mid: #4a4a4a;
+      --fg-lt: #767676;
+      --bg: #ffffff;
+      --bg-light: #f7f7f8;
+      --bg-section: #f2f2f4;
+      --border: #e0e0e4;
+      --font-display: "Cormorant Garamond", Georgia, serif;
+      --font-body: "M PLUS Rounded 1c", "Helvetica Neue", Arial, sans-serif;
+      --nav-util-h: 40px;
+      --nav-main-h: 72px;
+      --nav-padding-top: max(10px, env(safe-area-inset-top));
+      --nav-total: 112px;
+      --max-w: 1200px;
+      --radius-pill: 1000px;
+      --radius-card: 8px;
+      --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.08);
+      --shadow-hover: 0 6px 24px rgba(0, 0, 0, 0.13);
+      --trans: 0.2s ease;
+    }
+
+    /* ============================================================
+       RESET
+    ============================================================ */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--fg);
+      background: var(--bg);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    /* ============================================================
+       LAYOUT
+    ============================================================ */
+    .container {
+      width: 100%;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section {
+      padding: 80px 0;
+    }
+
+    .section--light {
+      background: var(--bg-light);
+    }
+
+    .section--gray {
+      background: var(--bg-section);
+    }
+
+    /* Centered section header pattern (wave + serif title) */
+    .sec-head {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+
+    .sec-head__wave {
+      display: block;
+      margin: 0 auto 18px;
+      color: var(--plum);
+      opacity: 0.55;
+    }
+
+    .sec-head__title {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 4.5vw, 52px);
+      font-weight: 400;
+      color: var(--fg);
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .sec-head__sub {
+      font-size: 16px;
+      color: var(--fg-mid);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .sec-head--left {
+      text-align: left;
+    }
+
+    .sec-head--left .sec-head__wave {
+      margin-left: 0;
+    }
+
+    .sec-head--left .sec-head__sub {
+      margin-left: 0;
+    }
+
+    /* ============================================================
+       BUTTONS
+    ============================================================ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 28px;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: all var(--trans);
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn--dark {
+      background: #111;
+      color: #fff;
+    }
+
+    .btn--dark:hover {
+      background: var(--plum);
+      transform: translateY(-1px);
+    }
+
+    .btn--plum {
+      background: var(--plum);
+      color: #fff;
+    }
+
+    .btn--plum:hover {
+      background: var(--plum-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn--outline {
+      background: transparent;
+      color: var(--plum);
+      border: 1.5px solid var(--plum);
+    }
+
+    .btn--outline:hover {
+      background: var(--plum);
+      color: #fff;
+    }
+
+    .btn--white {
+      background: #fff;
+      color: var(--plum);
+    }
+
+    .btn--white:hover {
+      background: var(--plum-dark);
+      color: #fff;
+    }
+
+    .btn--sm {
+      padding: 9px 20px;
+      font-size: 13px;
+    }
+
+    /* ============================================================
+       WAVE DIVIDER SVG (inline, reusable via class)
+    ============================================================ */
+    .wave-divider {
+      display: flex;
+      justify-content: center;
+      margin: 8px 0 20px;
+    }
+
+    .wave-divider svg {
+      width: 56px;
+      height: 22px;
+    }
+
+    /* ============================================================
+       UTILITY BAR
+    ============================================================ */
+
+
+    /* ============================================================
+       NAVIGATION
+    ============================================================ */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #fff;
+      padding-top: var(--nav-padding-top);
+      box-sizing: border-box;
+      min-height: calc(var(--nav-main-h) + var(--nav-padding-top));
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+    }
+
+    .nav__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: var(--nav-main-h);
+      gap: 24px;
+    }
+
+    .nav__logo {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+      line-height: 0;
+    }
+
+    .nav__logo svg {
+      height: 32px;
+      width: auto;
+    }
+
+    .nav__links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav__link {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--fg-mid);
+      transition: color var(--trans);
+      white-space: nowrap;
+    }
+
+    .nav__link:hover {
+      color: var(--plum);
+    }
+
+    .nav__cta {
+      flex-shrink: 0;
+    }
+
+    .nav__mobile-cta {
+      display: none;
+    }
+
+    @media (max-width: 900px) {
+      .nav__links {
+        display: none;
+      }
+
+      .nav__cta {
+        display: none;
+      }
+
+      .nav__mobile-cta {
+        display: inline-flex;
+      }
+    }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      background: #c8c2cc;
+    }
+
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background-color: #b8b0c0;
+      background-image: linear-gradient(160deg, #b8b0c0 0%, #8e849a 100%);
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding-top: max(96px, 14vh);
+      padding-left: 24px;
+      padding-right: 24px;
+      box-sizing: border-box;
+      color: rgba(255, 255, 255, 0.55);
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      gap: 10px;
+      pointer-events: none;
+    }
+
+    /* When you add a photo: set background-image on .hero__bg or use <img class="hero__bg-img"> inside .hero__bg */
+    .hero__bg > .hero__bg-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .hero__bg svg {
+      position: relative;
+      z-index: 1;
+      width: 48px;
+      height: 48px;
+      opacity: 0.75;
+      flex-shrink: 0;
+    }
+
+    .hero__overlay {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      background: var(--plum);
+      padding: 44px 0 56px;
+      overflow: hidden;
+    }
+
+    .hero__overlay::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='800' height='200' viewBox='0 0 800 200' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 80 Q200 20 400 80 Q600 140 800 80 L800 200 L0 200Z' fill='%23ffffff' fill-opacity='0.04'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center bottom;
+      background-size: cover;
+    }
+
+    .hero__content {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: start;
+      gap: 48px;
+    }
+
+    .hero__headline {
+      font-family: var(--font-display);
+      font-size: clamp(38px, 5vw, 68px);
+      font-weight: 400;
+      color: #fff;
+      line-height: 1.12;
+      margin-bottom: 18px;
+      text-wrap: balance;
+    }
+
+    .hero__deck {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 2.8vw, 32px);
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.96);
+      margin: 0 0 16px;
+      max-width: 560px;
+      line-height: 1.35;
+    }
+
+    .hero__bold-lead {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      margin: 0 0 14px;
+      max-width: 560px;
+      line-height: 1.55;
+    }
+
+    .hero__body {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.88);
+      margin: 0;
+      max-width: 560px;
+      line-height: 1.75;
+    }
+
+    .hero__aside {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 16px;
+      min-width: 260px;
+    }
+
+    .hero__form-title {
+      font-family: var(--font-display);
+      font-size: clamp(24px, 2.8vw, 34px);
+      font-weight: 500;
+      color: #fff;
+      line-height: 1.2;
+      margin: 0;
+      text-align: center;
+    }
+
+    .hero__form-cta {
+      align-self: center;
+    }
+
+    .form-embed {
+      border-radius: 12px;
+      padding: 28px 24px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 140px;
+    }
+
+    .form-embed--hero {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px dashed rgba(255, 255, 255, 0.45);
+      min-width: 260px;
+      min-height: 300px;
+      backdrop-filter: blur(6px);
+    }
+
+    .form-embed__placeholder {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.65);
+      letter-spacing: 0.02em;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .form-embed--cta {
+      max-width: 520px;
+      margin: 0 auto 36px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px dashed rgba(255, 255, 255, 0.4);
+      min-height: 200px;
+      position: relative;
+    }
+
+    @media (max-width: 900px) {
+      .hero__content {
+        grid-template-columns: 1fr;
+      }
+
+      .form-embed--hero {
+        min-width: auto;
+      }
+
+      .hero__aside {
+        min-width: auto;
+        width: 100%;
+      }
+
+      .hero {
+        min-height: 85vh;
+        min-height: 85dvh;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        min-height: 80vh;
+        min-height: 80dvh;
+      }
+    }
+
+    /* ============================================================
+       INTRO BADGE (under hero)
+    ============================================================ */
+    .intro-bar {
+      background: var(--bg-light);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+    }
+
+    .intro-bar__inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--fg);
+      text-align: center;
+      flex-wrap: wrap;
+    }
+
+    .intro-bar__bold {
+      font-weight: 700;
+      color: var(--plum);
+    }
+
+    /* ============================================================
+       MEDIA / EXPLORE SECTION
+    ============================================================ */
+    .explore__placeholder {
+      aspect-ratio: 16/7;
+      background: var(--bg-section);
+      border-radius: var(--radius-card);
+      border: 2px dashed var(--border);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--fg-lt);
+      gap: 10px;
+    }
+
+    .explore__placeholder svg {
+      width: 40px;
+      height: 40px;
+      opacity: 0.4;
+    }
+
+    .explore__placeholder p {
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.7;
+    }
+
+    /* ============================================================
+       TRUST INDICATORS
+    ============================================================ */
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .trust-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 36px 28px 32px;
+      text-align: center;
+      transition: box-shadow var(--trans);
+    }
+
+    .trust-card:hover {
+      box-shadow: var(--shadow-card);
+    }
+
+    .trust-card__value {
+      font-family: var(--font-display);
+      font-size: 40px;
+      font-weight: 500;
+      color: var(--plum);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .trust-card__label {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--fg);
+      margin-bottom: 8px;
+    }
+
+    .trust-card__desc {
+      font-size: 14px;
+      color: var(--fg-mid);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .trust-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+    }
+
+    /* ============================================================
+       TREATMENT CATEGORIES
+    ============================================================ */
+    .treatments-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .treatment-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 28px;
+      transition: box-shadow var(--trans), border-color var(--trans);
+    }
+
+    .treatment-card:hover {
+      box-shadow: var(--shadow-card);
+      border-color: var(--plum);
+    }
+
+    .treatment-card__label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--plum);
+      margin-bottom: 8px;
+    }
+
+    .treatment-card__title {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--fg);
+      margin-bottom: 8px;
+    }
+
+    .treatment-card__desc {
+      font-size: 14px;
+      color: var(--fg-mid);
+      margin-bottom: 18px;
+      line-height: 1.65;
+    }
+
+    .treatment-card__list {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .treatment-card__list li {
+      font-size: 14px;
+      color: var(--fg-mid);
+      padding-left: 16px;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .treatment-card__list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--plum);
+    }
+
+    /* ============================================================
+       PROVIDERS
+    ============================================================ */
+    .providers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .provider-card {
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      text-align: center;
+      transition: box-shadow var(--trans);
+    }
+
+    .provider-card:hover {
+      box-shadow: var(--shadow-card);
+    }
+
+    .provider-card__photo {
+      aspect-ratio: 4/5;
+      background: linear-gradient(160deg, var(--bg-section) 0%, #ddd8e4 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--plum);
+      opacity: 0.5;
+    }
+
+    .provider-card__photo svg {
+      width: 44px;
+      height: 44px;
+    }
+
+    .provider-card__info {
+      padding: 18px 14px 22px;
+    }
+
+    .provider-card__name {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--fg);
+      margin-bottom: 4px;
+    }
+
+    .provider-card__role {
+      font-size: 13px;
+      color: var(--fg-lt);
+    }
+
+    .person-listing.providers-grid {
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      align-items: stretch;
+    }
+
+    .person-item {
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      text-align: center;
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow var(--trans);
+    }
+
+    .person-item:hover {
+      box-shadow: var(--shadow-card);
+    }
+
+    .person-item figure {
+      margin: 0;
+      background: linear-gradient(160deg, var(--bg-section) 0%, #ddd8e4 100%);
+    }
+
+    .person-item picture,
+    .person-item img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .person-item img {
+      object-fit: cover;
+      aspect-ratio: 1;
+    }
+
+    .person-item__ph {
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      background: linear-gradient(160deg, var(--bg-section) 0%, #ddd8e4 100%);
+      color: var(--plum);
+    }
+
+    .person-item__ph svg {
+      width: 52px;
+      height: 52px;
+      opacity: 0.45;
+    }
+
+    .person-item h3 {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--fg);
+      margin: 18px 14px 6px;
+      line-height: 1.25;
+    }
+
+    .person-item .position-title {
+      display: block;
+      font-size: 13px;
+      color: var(--fg-lt);
+      line-height: 1.45;
+      padding: 0 14px 22px;
+    }
+
+    /* ============================================================
+       WHY CHOOSE
+    ============================================================ */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 44px;
+    }
+
+    .why-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 28px 24px;
+      transition: box-shadow var(--trans), border-color var(--trans);
+    }
+
+    .why-card:hover {
+      box-shadow: var(--shadow-card);
+      border-color: var(--plum);
+    }
+
+    .why-card__title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--fg);
+      margin-bottom: 8px;
+    }
+
+    .why-card__body {
+      font-size: 14px;
+      color: var(--fg-mid);
+      line-height: 1.65;
+    }
+
+    .why__intro {
+      font-size: 16px;
+      color: var(--fg-mid);
+      max-width: 680px;
+      margin: -20px auto 48px;
+      text-align: center;
+      line-height: 1.75;
+    }
+
+    .why__cta {
+      text-align: center;
+    }
+
+    /* ============================================================
+       TESTIMONIALS
+    ============================================================ */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .testimonial-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 32px 28px;
+      transition: box-shadow var(--trans);
+    }
+
+    .testimonial-card:hover {
+      box-shadow: var(--shadow-card);
+    }
+
+    .testimonial-card__stars {
+      color: #f5a623;
+      font-size: 15px;
+      margin-bottom: 14px;
+      letter-spacing: 2px;
+    }
+
+    .testimonial-card__text {
+      font-size: 15px;
+      color: var(--fg-mid);
+      line-height: 1.8;
+      margin-bottom: 18px;
+      font-style: italic;
+    }
+
+    .testimonial-card__author {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--fg);
+    }
+
+    .testimonials__footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 14px;
+      color: var(--fg-mid);
+    }
+
+    .testimonials__footer a {
+      color: var(--plum);
+      font-weight: 600;
+    }
+
+    .testimonials__footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* ============================================================
+       BEFORE & AFTER
+    ============================================================ */
+    .ba-placeholder {
+      background: var(--bg-section);
+      border: 2px dashed var(--border);
+      border-radius: var(--radius-card);
+      padding: 80px 40px;
+      text-align: center;
+      color: var(--fg-lt);
+    }
+
+    .ba-placeholder svg {
+      width: 44px;
+      height: 44px;
+      margin: 0 auto 14px;
+      opacity: 0.35;
+    }
+
+    .ba-placeholder p {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* ============================================================
+       FAQ
+    ============================================================ */
+    .faq-list {
+      max-width: 780px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item:first-child {
+      border-top: 1px solid var(--border);
+    }
+
+    .faq-question {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      gap: 20px;
+    }
+
+    .faq-question-text {
+      font-size: 15.5px;
+      font-weight: 500;
+      color: var(--fg);
+    }
+
+    .faq-item.open .faq-question-text {
+      color: var(--plum);
+    }
+
+    .faq-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 1.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all var(--trans);
+      color: var(--fg-mid);
+    }
+
+    .faq-item.open .faq-icon {
+      background: var(--plum);
+      border-color: var(--plum);
+      color: #fff;
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 28px 18px 0;
+      font-size: 15px;
+      color: var(--fg-mid);
+      line-height: 1.75;
+    }
+
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+
+    /* ============================================================
+       FINAL CTA
+    ============================================================ */
+    .cta-section {
+      background: var(--plum);
+      padding: 88px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='1200' height='240' viewBox='0 0 1200 240' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 100 Q300 20 600 100 Q900 180 1200 100 L1200 240 L0 240Z' fill='%23ffffff' fill-opacity='0.04'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center bottom;
+      background-size: cover;
+    }
+
+    .cta-section__wave {
+      position: relative;
+      color: rgba(255, 255, 255, 0.4);
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .cta-section__title {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5.5vw, 60px);
+      font-weight: 400;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 18px;
+      position: relative;
+    }
+
+    .cta-section__body {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.8);
+      max-width: 520px;
+      margin: 0 auto 36px;
+      line-height: 1.75;
+      position: relative;
+    }
+
+    .cta-section__actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    .cta-section__phone {
+      margin-top: 24px;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.6);
+      position: relative;
+    }
+
+    .cta-section__phone a {
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 700;
+    }
+
+    /* ============================================================
+       MOBILE STICKY BAR
+    ============================================================ */
+    .mobile-sticky {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      background: #fff;
+      border-top: 1px solid var(--border);
+      padding: 12px 20px;
+      box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .mobile-sticky .btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    @media (max-width: 768px) {
+      .mobile-sticky {
+        display: block;
+      }
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    .footer {
+      background: var(--fg);
+      color: rgba(255, 255, 255, 0.55);
+      padding: 48px 0 32px;
+    }
+
+    .footer__logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+      line-height: 0;
+    }
+
+    .footer__logo svg {
+      height: 32px;
+      width: auto;
+    }
+
+    .footer__logo svg path.lz-st0 {
+      fill: #fff;
+    }
+
+    .footer__sub {
+      font-size: 13px;
+      margin-bottom: 28px;
+    }
+
+    .footer__links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .footer__link {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.55);
+      transition: color var(--trans);
+    }
+
+    .footer__link:hover {
+      color: #fff;
+    }
+
+    .footer__copy {
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .footer__copy-link {
+      color: rgba(255, 255, 255, 0.65);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-color: rgba(255, 255, 255, 0.3);
+      transition: color var(--trans), text-decoration-color var(--trans);
+    }
+
+    .footer__copy-link:hover {
+      color: #fff;
+      text-decoration-color: rgba(255, 255, 255, 0.55);
+    }
+
+    .footer-inner {
+      text-align: center;
+    }
+
+    /* ============================================================
+       ABOUT / CHECKLIST
+    ============================================================ */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .about-visual {
+      aspect-ratio: 4/5;
+      background: linear-gradient(160deg, var(--bg-section) 0%, #ddd8e4 100%);
+      border-radius: var(--radius-card);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--plum);
+      opacity: 0.45;
+    }
+
+    .about-visual svg {
+      width: 54px;
+      height: 54px;
+    }
+
+    .about-checklist {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin: 24px 0 36px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
+      color: var(--fg-mid);
+      line-height: 1.6;
+    }
+
+    .check-item__dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--plum);
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+
+    @media (max-width: 800px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .about-visual {
+        aspect-ratio: 16/9;
+      }
+    }
+
+    /* ============================================================
+       SCROLL REVEAL
+    ============================================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ============================================================
+       RESPONSIVE TWEAKS
+    ============================================================ */
+    @media (max-width: 600px) {
+      .section {
+        padding: 60px 0;
+      }
+
+      .sec-head {
+        margin-bottom: 36px;
+      }
+
+      .cta-section {
+        padding: 64px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="nav" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="#" class="nav__logo" aria-label="Lazaderm home">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 236 57" aria-hidden="true"
+            focusable="false">
+            <style>
+              .lz-st0 {
+                fill: #473359;
+              }
+            </style>
+            <path class="lz-st0"
+              d="M28.5,20.5c-2.2,0-4.5,0.5-6.8,1.6c-5.5,3.3-8.2,7.7-8.2,13.2c0,2.5,0.6,5,1.9,7.4c3.4,5.1,7.6,7.6,12.7,7.6h0.8c3.7,0,6.6-1,8.9-3.1l0,0.6v0.3c0.6,1.5,1.5,2.2,2.8,2.2h0.2c1.8-0.3,2.7-1.2,2.7-2.7v-12c0-2.4-0.5-4.7-1.5-7C38.6,23.2,34.2,20.4,28.5,20.5L28.5,20.5z M37.8,35.7c0,1.3-0.4,2.8-1.1,4.2c-2,3.1-4.6,4.7-7.8,4.7h-0.8c-0.9,0-2-0.2-3.2-0.7c-3.8-1.9-5.7-4.7-5.7-8.5v-0.3c0-0.9,0.2-1.9,0.5-3.1c1.9-4,4.8-6,8.6-6h0.1c1.3,0,2.6,0.3,3.9,0.8c3.6,1.9,5.4,4.7,5.4,8.3L37.8,35.7L37.8,35.7z" />
+            <path class="lz-st0"
+              d="M68.5,20.5l-1.1,0.1H50.2l-1.9-0.2v0.2c-0.9,0-1.5,0.9-1.8,2.7c0,1.4,0.8,2.4,2.4,3l1.7-0.1h11.7l-11.6,15c-2.9,3.4-4.3,5.5-4.3,6.2c0.3,2,1.2,2.9,2.7,2.9h19.2c1.8-0.3,2.6-1.2,2.6-2.7v-0.3c0-1.4-0.8-2.3-2.5-2.7H55.2l13.4-17.2c1.7-1.9,2.5-3.1,2.5-3.8v-0.6C71.1,21.9,70.2,21.1,68.5,20.5L68.5,20.5z" />
+            <path class="lz-st0"
+              d="M87.6,20.5c-2.2,0-4.5,0.5-6.8,1.6c-5.5,3.3-8.2,7.7-8.2,13.2c0,2.5,0.6,5,1.9,7.4c3.4,5.1,7.6,7.6,12.7,7.6H88c3.7,0,6.6-1,8.9-3.1l0,0.6v0.3c0.6,1.5,1.5,2.2,2.8,2.2h0.2c1.8-0.3,2.7-1.2,2.7-2.7v-12c0-2.4-0.5-4.7-1.5-7C97.7,23.2,93.2,20.4,87.6,20.5L87.6,20.5z M96.8,35.7c0,1.3-0.4,2.8-1.1,4.2c-2,3.1-4.6,4.7-7.8,4.7h-0.8c-0.9,0-2-0.2-3.2-0.7c-3.8-1.9-5.7-4.7-5.7-8.5v-0.3c0-0.9,0.2-1.9,0.5-3.1c1.9-4,4.8-6,8.6-6h0.1c1.3,0,2.6,0.3,3.9,0.8c3.6,1.9,5.4,4.7,5.4,8.3L96.8,35.7L96.8,35.7z" />
+            <path class="lz-st0"
+              d="M136,10.6c-0.7-4.1-3.2-7.1-7.4-9.2c-1.6-0.6-3.2-0.9-4.6-1h-0.5c-1.6,0-2.6,1-2.8,3c0,1.5,1,2.4,3,2.7c3.4,0,5.7,1.7,6.8,5.1l0.1,1.8v9.8c-2.4-2.2-5.5-3.2-9.3-3.2c-2.9,0-5.8,0.9-8.5,2.7c-4.3,3.3-6.4,7.4-6.4,12.2c0,3.2,1.1,6.3,3.2,9.3c3.5,3.8,7.2,5.7,11.2,5.7h0.8c4.1,0,7.8-1.8,11.1-5.4c2.3-3.1,3.5-6.1,3.5-9l-0.1-3.5v-6.4h0.1v-12c0-0.7-0.1-1.5-0.1-2.2C136.1,11,136.1,10.8,136,10.6L136,10.6z M130.6,35c0,0.7-0.2,1.6-0.5,2.8c-1.9,4.1-4.8,6.1-8.5,6.1H121c-0.9,0-1.8-0.2-2.9-0.5c-4.1-1.9-6.1-4.8-6.1-8.6v-0.5c0-0.9,0.2-1.9,0.6-3c1.9-4,4.8-6,8.5-6h0.4c0.7,0,1.7,0.2,2.9,0.5c4.1,1.9,6.2,4.8,6.2,8.6L130.6,35L130.6,35z" />
+            <path class="lz-st0"
+              d="M169.9,32c-0.6-2.4-1.7-4.5-3.3-6.4c-4.4-4.5-9.4-6.1-15.1-4.7c-2.2,0.5-4.3,1.7-6.5,3.5c-4.3,4.4-5.7,9.2-4.4,14.5c0.6,2.5,1.9,4.8,3.7,6.7c4.4,4.1,9.2,5.5,14.4,4.2l0.8-0.2c5.2-2,7.5-4.1,7-6.1l-0.1-0.3c-0.4-1.4-1.4-2.1-3.2-2l-0.9,0.2c-1.8,1.5-3.4,2.4-4.8,2.8c-1.2,0.3-2.6,0.4-4.2,0.2c-2.7-0.7-4.6-1.9-5.5-3.5L168,36c1.5-0.4,2.2-1.5,2-3.4L169.9,32L169.9,32z M145.9,35.5c-0.1-0.5,0.1-1.4,0.5-2.8c1.2-3.3,3.3-5.4,6.2-6.1l1.1-0.3c1.9-0.5,4.2,0,6.6,1.4c2,1.6,3.1,2.8,3.2,3.4L145.9,35.5L145.9,35.5z" />
+            <path class="lz-st0"
+              d="M179.7,22.7v-0.4c0-1.3-0.9-2.1-2.7-2.6c-1.8,0-2.8,1-3,3.2v24c0.3,1.9,1.3,2.8,2.8,2.8h0.2c1.9-0.3,2.8-1.2,2.8-2.7V34.7c0-1.3,0.2-2.5,0.6-3.5c1.8-3.8,4.5-5.8,8.3-5.8h0.6c0.2,0,0.4,0,0.6,0V23c0.1-1.3,0.5-2.3,1-3.2c-0.7-0.1-1.4-0.2-2.1-0.2C185,19.7,181.9,20.7,179.7,22.7L179.7,22.7z" />
+            <path class="lz-st0"
+              d="M12.9,50.8c-3.4,0-5.6-1.7-6.7-5.1L6,42.7V9.4C6,7.8,5,6.9,3.2,6.6C1.4,7,0.5,7.9,0.5,9.4v34.3C0.5,49.1,3,53,8,55.5c1.6,0.6,3.1,0.9,4.5,1H13c1.6,0,2.5-1,2.8-3C15.8,52,14.9,51.1,12.9,50.8L12.9,50.8z" />
+            <path class="lz-st0"
+              d="M233.9,26.9c-2.6-4.3-6.2-6.4-10.8-6.4l-2.4,0.3c-3.6,1.1-5.8,2.4-6.6,3.8c-2.3-2.8-5.3-4.2-9-4.2c-2.8,0-5,0.6-6.5,1.8c-0.4-1.2-1.3-1.8-2.6-1.8c-1.8,0-2.7,1-2.9,3.1v23.3c0.3,1.8,1.3,2.7,2.8,2.7h0.2c1.8-0.3,2.7-1.2,2.7-2.6V33.6c0-1.3,0.1-2.2,0.3-3c1.2-3,3.1-4.5,6-4.5h0.3c2.1,0,3.7,0.9,5.1,2.6c0.8,0.7,1.2,2.7,1.2,5.9V47c0,1.4,0.9,2.3,2.7,2.6h0.2c1.5,0,2.4-0.9,2.7-2.7v-15c0-0.4,0.1-0.9,0.2-1.5c1.3-2.8,3.2-4.3,5.6-4.3h1l1.3,0.2c3.1,1.1,4.6,3.1,4.6,6v14.5c0,1.5,0.9,2.4,2.7,2.7h0.2c1.8-0.4,2.7-1.2,2.7-2.5v-15C235.2,30.4,234.8,28.7,233.9,26.9L233.9,26.9z" />
+          </svg>
+        </a>
+        <div class="nav__links">
+          <a href="#treatments" class="nav__link">Treatments</a>
+          <a href="#providers" class="nav__link">Providers</a>
+          <a href="#why-us" class="nav__link">Why Us</a>
+          <a href="#faq" class="nav__link">FAQ</a>
+        </div>
+        <a href="#book" class="btn btn--plum nav__cta">Book Now</a>
+        <a href="#book" class="btn btn--plum btn--sm nav__mobile-cta">Book Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- =====================================================
+         1. HERO / INTRO
+    ====================================================== -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <!-- Background: gradient below, or add <img class="hero__bg-img" src="..." alt=""> for a photo (cover, top-aligned). -->
+      <div class="hero__bg" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+        Hero Image
+      </div>
+      <!-- Plum overlay with wave texture -->
+      <div class="hero__overlay">
+        <div class="container">
+          <div class="hero__content">
+            <div class="hero__text">
+              <h1 class="hero__headline" id="hero-title">
+                Help Your Skin Flourish With Aesthetic Treatments<br />
+                for Natural-Looking Results
+              </h1>
+              <h2 class="hero__deck" id="hero-subtitle">
+                Lazaderm brings the world&rsquo;s best aesthetic treatments close to home with a full-service medical spa
+                in Fargo, ND.
+              </h2>
+              <p class="hero__bold-lead">Quick Treatments. Customizable. Trusted.</p>
+              <p class="hero__body">Our full range of face and body treatments, including lasers, injectables and fat
+                reduction, will help you look and feel your best.</p>
+            </div>
+            <div class="hero__aside">
+              <h3 class="hero__form-title" id="hero-form-heading">Treat Your Skin Today</h3>
+              <div class="form-embed form-embed--hero" aria-labelledby="hero-form-heading">
+                <!-- Replace the paragraph below with your form embed (iframe, script, etc.). -->
+                <p class="form-embed__placeholder">Form embed code goes here</p>
+              </div>
+              <a href="#book" class="btn btn--dark hero__form-cta">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         2. ABOUT LAZADERM
+    ====================================================== -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-visual reveal" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+              stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <div class="reveal">
+            <div class="wave-divider" style="justify-content:flex-start;" aria-hidden="true">
+              <svg viewBox="0 0 56 22" fill="none" xmlns="http://www.w3.org/2000/svg" width="56" height="22">
+                <path d="M2 18 Q14 4 28 11 Q42 18 54 4" stroke="#473359" stroke-width="2" stroke-linecap="round"
+                  fill="none" />
+              </svg>
+            </div>
+            <h2 class="sec-head__title" style="text-align:left;" id="about-title">Let Your Health and Beauty Flourish</h2>
+            <p style="font-size:16px;color:var(--fg-mid);line-height:1.75;margin-bottom:12px;">
+              Healthy skin is beautiful skin, and we have a full menu of treatments to help with both. We stay up to date
+              with all of the latest innovations in anti-aging care. We treat our patients like family, with unparalleled
+              care and customized services from an experienced team in Fargo.
+            </p>
+            <p style="font-size:15px;color:var(--fg-mid);margin-bottom:4px;">At Lazaderm, you can expect:</p>
+            <ul class="about-checklist" aria-label="What to expect at Lazaderm">
+              <li class="check-item"><span class="check-item__dot" aria-hidden="true"></span>Personalized services that
+                complement your features</li>
+              <li class="check-item"><span class="check-item__dot" aria-hidden="true"></span>A full team of aesthetic
+                experts</li>
+              <li class="check-item"><span class="check-item__dot" aria-hidden="true"></span>The newest technology</li>
+              <li class="check-item"><span class="check-item__dot" aria-hidden="true"></span>Natural-looking results</li>
+              <li class="check-item"><span class="check-item__dot" aria-hidden="true"></span>Comfortable, minimally
+                invasive treatments</li>
+            </ul>
+            <a href="#book" class="btn btn--plum">Book Your Treatment</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         3. EXPLORE LAZADERM (Media Section)
+    ====================================================== -->
+    <section class="section section--light" id="explore" aria-labelledby="explore-title">
+      <div class="container">
+        <div class="sec-head">
+          <div class="wave-divider" aria-hidden="true">
+            <svg viewBox="0 0 56 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 18 Q14 4 28 11 Q42 18 54 4" stroke="#473359" stroke-width="2" stroke-linecap="round"
+                fill="none" />
+            </svg>
+          </div>
+          <h2 class="sec-head__title" id="explore-title">Explore Lazaderm</h2>
+          <p class="sec-head__sub">Video, carousel of pictures, or similar&mdash;see what a visit to our Fargo medspa can
+            include.</p>
+        </div>
+        <div class="explore__placeholder reveal" aria-label="Video or image carousel placeholder">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <p>Video / Image Carousel</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         4. TRUST INDICATORS
+    ====================================================== -->
+    <section class="section section--gray" id="trust" aria-labelledby="trust-title">
+      <div class="container">
+        <div class="sec-head">
+          <div class="wave-divider" aria-hidden="true">
+            <svg viewBox="0 0 56 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 18 Q14 4 28 11 Q42 18 54 4" stroke="#473359" stroke-width="2" stroke-linecap="round"
+                fill="none" />
+            </svg>
+          </div>
+          <h2 class="sec-head__title" id="trust-title">About Lazaderm</h2>
+          <p class="sec-head__sub">At Lazaderm, we believe that your skin deserves the best care. Every treatment is
+            backed by science and customized for you.</p>
+        </div>
+        <div class="trust-grid reveal">
+          <article class="trust-card">
+            <div class="trust-card__value">20+</div>
+            <div class="trust-card__label">Years Cosmetic Experience</div>
+            <p class="trust-card__desc">We have been offering patient-centered aesthetic care for more than 20 years.
+            </p>
+          </article>
+          <article class="trust-card">
+            <div class="trust-card__value">MD-Led</div>
+            <div class="trust-card__label">Physician-Led Medical Spa</div>
+            <p class="trust-card__desc">MD oversight ensures your safety is always prioritized.</p>
+          </article>
+          <article class="trust-card">
+            <div class="trust-card__value">4.8 &#9733;</div>
+            <div class="trust-card__label">Google Rating</div>
+            <p class="trust-card__desc">Patients love our welcoming atmosphere and superior results.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         5. TREATMENT CATEGORIES
+    ====================================================== -->
+    <section class="section" id="treatments" aria-labelledby="treatments-title">
+      <div class="container">
+        <div class="sec-head">
+          <div class="wave-divider" aria-hidden="true">
+            <svg viewBox="0 0 56 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 18 Q14 4 28 11 Q42 18 54 4" stroke="#473359" stroke-width="2" stroke-linecap="round"
+                fill="none" />
+            </svg>
+          </div>
+          <h2 class="sec-head__title" id="treatments-title">Medical Spa Treatments in Fargo</h2>
+          <p class="sec-head__sub">Our full range of face and body treatments, including lasers, injectables and fat
+            reduction, is tailored to your goals by our experienced team.</p>
+        </div>
+        <div class="treatments-grid reveal">
+          <article class="treatment-card">
+            <div class="treatment-card__label">Injectable Treatments</div>
+            <h3 class="treatment-card__title">Injectables</h3>
+            <p class="treatment-card__desc">Treat wrinkles, loss of volume and tired eyes.</p>
+            <ul class="treatment-card__list">
+              <li>Neuromodulators (Botox&reg;, Dysport&reg;)</li>
+              <li>Dermal Fillers (JUV&Eacute;DERM&reg;, Restylane&reg;, Bellafill&reg;)</li>
+              <li>Sculptra&reg; Collagen Stimulator</li>
+              <li>Nonsurgical Rhinoplasty</li>
+              <li>Tired Eye Treatment</li>
+            </ul>
+          </article>
+          <article class="treatment-card">
+            <div class="treatment-card__label">Laser and Light Treatments</div>
+            <h3 class="treatment-card__title">Laser &amp; Light</h3>
+            <p class="treatment-card__desc">Improve texture, tone, dull skin and signs of aging.</p>
+            <ul class="treatment-card__list">
+              <li>BroadBand Light (BBL)&reg; HERO&trade;</li>
+              <li>Laser Hair Removal</li>
+              <li>Laser Tattoo Removal</li>
+              <li>MicroLaserPeel&reg;</li>
+              <li>Profractional&reg; Laser</li>
+              <li>Q-Switch Laser</li>
+              <li>Sciton Moxi&reg; Laser</li>
+            </ul>
+          </article>
+          <article class="treatment-card">
+            <div class="treatment-card__label">Body Contouring Treatments</div>
+            <h3 class="treatment-card__title">Body Contouring</h3>
+            <p class="treatment-card__desc">Nonsurgical options for stubborn fat pockets.</p>
+            <ul class="treatment-card__list">
+              <li>CoolSculpting&reg; Elite</li>
+            </ul>
+          </article>
+          <article class="treatment-card">
+            <div class="treatment-card__label">Vein Treatments</div>
+            <h3 class="treatment-card__title">Vein Treatments</h3>
+            <p class="treatment-card__desc">Full-service care for spider veins and varicose veins.</p>
+            <ul class="treatment-card__list">
+              <li>Ambulatory Phlebectomy</li>
+              <li>Conservative Vein Therapy</li>
+              <li>Laser Vein Reduction</li>
+              <li>Non-Invasive Vein Evaluation</li>
+              <li>Sclerotherapy</li>
+            </ul>
+          </article>
+          <article class="treatment-card">
+            <div class="treatment-card__label">Facial and Skin Treatments</div>
+            <h3 class="treatment-card__title">Facial &amp; Skin</h3>
+            <p class="treatment-card__desc">Stimulate and nourish dull and dry skin.</p>
+            <ul class="treatment-card__list">
+              <li>HydraFacial&trade;</li>
+              <li>Microneedling</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         6. PROVIDERS
+    ====================================================== -->
+    <section class="section section--gray" id="providers" aria-labelledby="providers-title">
+      <div class="container">
+        <div class="sec-head">
+          <div class="wave-divider" aria-hidden="true">
+            <svg viewBox="0 0 56 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 18 Q14 4 28 11 Q42 18 54 4" stroke="#473359" stroke-width="2" stroke-linecap="round"
+                fill="none" />
+            </svg>
+          </div>
+          <h2 class="sec-head__title" id="providers-title">Meet Your Providers in Fargo</h2>
+          <p class="sec-head__sub">Your treatments will be performed by certified and licensed practitioners, with all
+            care overseen by a medical director.</p>
+        </div>
+        <div class="providers-grid person-listing reveal" aria-label="Person Listing">
+          <article class="person-item" aria-label="Lornell E. Hansen II, MD">
+            <figure>
+              <picture>
+                <source srcset="https://laza-derm.transforms.svdcdn.com/production/general-uploads/Staff-Pictures/24-Lazaderm-GP_People-600x600_Lornell-Hansen.jpg?w=250&amp;h=250&amp;auto=compress%2Cformat&amp;fit=crop&amp;dm=1718109691&amp;s=29be0f8e91abc3772e461f4081be1c86" type="image/jpeg">
+                <img loading="lazy" src="https://laza-derm.transforms.svdcdn.com/production/general-uploads/Staff-Pictures/24-Lazaderm-GP_People-600x600_Lornell-Hansen.jpg?w=25&amp;h=25&amp;auto=compress%2Cformat&amp;fit=crop&amp;dm=1718109691&amp;s=a1e69d1b9e473fc7f88b7517d6a5b6a7" width="250" height="250" alt="A man with gray hair and a beard, wearing glasses and a black suit with a blue shirt and a yellow striped tie, is smiling in front of a white, horizontally paneled background.">
+              </picture>
+            </figure>
+            <h3>Lornell E. Hansen II, MD</h3>
+            <span class="position-title">Medical Director</span>
+          </article>
+          <article class="person-item" aria-label="Megaan Cianci">
+            <figure class="person-item__ph" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+              </svg>
+            </figure>
+            <h3>Megaan Cianci</h3>
+            <span class="position-title">MSN, AGPCNP-BC</span>
+          </article>
+          <article class="person-item" aria-label="Erin Dockter">
+            <figure class="person-item__ph" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+              </svg>
+            </figure>
+            <h3>Erin Dockter</h3>
+            <span class="position-title">Aesthetic Nurse, LPN, Licensed Medical Examiner</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         7. WHY CHOOSE LAZADERM
+    ====================================================== -->
+    <section class="section" id="why-us" aria-labelledby="why-title">
+      <div class="container">
+        <div class="sec-head">
+          <div class="wave-divider" aria-hidden="true">
+            <svg viewBox="0 0 56 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 18 Q14 4 28 11 Q42 18 54 4" stroke="#473359" stroke-width="2" stroke-linecap="round"
+                fill="none" />
+            </svg>
+          </div>
+          <h2 class="sec-head__title" id="why-title">Why Choose Lazaderm?</h2>
+        </div>
+        <p class="why__intro">
+          At our medical spa, we prioritize your health and safety and offer treatments that are centered around your
+          concerns and goals. From skin solutions and vein treatments to body contouring and age-defying lasers, we offer
+          head-to-toe care that is personalized for your needs.
+        </p>
+        <div class="why-grid reveal">
+          <article class="why-card">
+            <h3 class="why-card__title">Flexible Payment Plans</h3>
+            <p class="why-card__body">Payment plans with Cherry from All&eacute; or CareCredit help you break up costs into
+              monthly payments.</p>
+          </article>
+          <article class="why-card">
+            <h3 class="why-card__title">Full Menu of Aesthetic Treatments</h3>
+            <p class="why-card__body">A full range of options to treat signs of aging, unwanted fat, visible veins and
+              more.</p>
+          </article>
+          <article class="why-card">
+            <h3 class="why-card__title">Friendly, Experienced Providers</h3>
+            <p class="why-card__body">Warm and friendly providers who are skilled and experienced.</p>
+          </article>
+          <article class="why-card">
+            <h3 class="why-card__title">Luxury Medical Spa Experience</h3>
+            <p class="why-card__body">Clean, sleek and modern atmosphere where treatments are comfortable and relaxing.
+            </p>
+          </article>
+          <article class="why-card">
+            <h3 class="why-card__title">Advanced Technology and Products</h3>
+            <p class="why-card__body">Technology hand-selected for science-based results and superior comfort.</p>
+          </article>
+        </div>
+        <div class="why__cta">
+          <a href="#book" class="btn btn--plum">Get Expert Care</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         8. TESTIMONIALS
+    ====================================================== -->
+    <section class="section section--light" id="testimonials" aria-labelledby="testimonials-title">
+      <div class="container">
+        <div class="sec-head">
+          <div class="wave-divider" aria-hidden="true">
+            <svg viewBox="0 0 56 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 18 Q14 4 28 11 Q42 18 54 4" stroke="#473359" stroke-width="2" stroke-linecap="round"
+                fill="none" />
+            </svg>
+          </div>
+          <h2 class="sec-head__title" id="testimonials-title">What Our Patients Say</h2>
+        </div>
+        <div class="testimonials-grid reveal">
+          <article class="testimonial-card">
+            <div class="testimonial-card__stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-card__text">&ldquo;A Truly Exceptional Experience: Five Stars for Lazaderm Fargo! I
+              cannot recommend the Lazaderm Clinic in Fargo highly enough&mdash;this is truly a five-star operation! From
+              the moment you walk in the door, the atmosphere is professional, welcoming, and focused entirely on
+              client comfort and incredible results. The level of expertise here is unmatched. My consultations and
+              treatments with Erin were outstanding. She has an incredible eye for detail and provides thoughtful, expert
+              guidance, ensuring the results are exactly what you hoped for but still look completely natural. I felt
+              fully informed and confident in her hands every step of the way.&rdquo;</p>
+            <div class="testimonial-card__author">&#8212; Steve A.</div>
+          </article>
+          <article class="testimonial-card">
+            <div class="testimonial-card__stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-card__text">&ldquo;I have loved both of my experiences at Lazaderm. I have done a
+              couple tattoo removal sessions, and also just got a lip flip! I really appreciate how kind and welcoming
+              the staff is, and how much time they take in explaining all services, and answering any questions you may
+              have! They also make sure you are comfortable throughout the services by providing breaks whenever
+              needed! Definitely will continue returning!!! :)&rdquo;</p>
+            <div class="testimonial-card__author">&#8212; Jenna A.</div>
+          </article>
+          <article class="testimonial-card">
+            <div class="testimonial-card__stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-card__text">&ldquo;Megaan did an incredible job taking care of all my concerns, as
+              always! I will follow this girl anywhere! Lazaderm has a lovely atmosphere. Staff at the front desk are
+              warm, welcoming and helpful. You will leave here feeling the best version of yourself.&rdquo;</p>
+            <div class="testimonial-card__author">&#8212; Joy O.</div>
+          </article>
+        </div>
+        <div class="testimonials__footer">
+          <a href="#">Read more patient stories &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         9. BEFORE & AFTER
+    ====================================================== -->
+    <section class="section" id="results" aria-labelledby="results-title">
+      <div class="container">
+        <div class="sec-head">
+          <div class="wave-divider" aria-hidden="true">
+            <svg viewBox="0 0 56 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 18 Q14 4 28 11 Q42 18 54 4" stroke="#473359" stroke-width="2" stroke-linecap="round"
+                fill="none" />
+            </svg>
+          </div>
+          <h2 class="sec-head__title" id="results-title">Before &amp; After</h2>
+          <p class="sec-head__sub">Real results from real patients at Lazaderm Fargo.</p>
+        </div>
+        <div class="ba-placeholder reveal" aria-label="Before and after gallery placeholder">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          <p>Gallery &mdash; Add Before &amp; After Photos Here</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         10. FAQ
+    ====================================================== -->
+    <section class="section section--light" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="sec-head">
+          <div class="wave-divider" aria-hidden="true">
+            <svg viewBox="0 0 56 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 18 Q14 4 28 11 Q42 18 54 4" stroke="#473359" stroke-width="2" stroke-linecap="round"
+                fill="none" />
+            </svg>
+          </div>
+          <h2 class="sec-head__title" id="faq-title">Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-list" role="list">
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="fq1">
+              <span class="faq-question-text">Where can I learn about the most recent specials?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="fq1">We love to celebrate our patients with frequent specials. Get even more by
+              becoming a Lazaderm VIP or an <a href="https://alle.com/registration" rel="noopener noreferrer"
+                target="_blank">Alle member</a>. See what&rsquo;s new on our <a href="https://lazaderm.com/specials"
+                rel="noopener noreferrer" target="_blank">Specials</a> page!</div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="fq2">
+              <span class="faq-question-text">What is the VIP Program at Lazaderm?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="fq2">As a <a href="https://lazaderm.com/lazaderm-vip" rel="noopener noreferrer"
+                target="_blank">VIP at Lazaderm</a>, you get rewards for visits and purchases, free birthday gifts,
+              member-only offers and events and more. Each time you visit, you will scan a QR code, which will get you
+              closer to a reward! It&rsquo;s free to sign up and can be done quickly and easily at this <a
+                href="https://lazaderm.repeatmd.app/v1migration" rel="noopener noreferrer" target="_blank">link</a>.
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="fq3">
+              <span class="faq-question-text">Who will perform my treatments?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="fq3">At our Fargo location, treatments are performed by Megaan Cianci, who has a
+              Master of Science in Nursing and is a certified Adult-Gerontology Primary Care Nurse Practitioner, or
+              Erin Dockter, an Aesthetic Nurse, Licensed Practical Nurse and Licensed Medical Examiner. All treatments are
+              overseen by Lornell E. Hansen II, MD.</div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="fq4">
+              <span class="faq-question-text">How do I know which treatment is right for me?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="fq4">You will start with a <a href="https://www.lazadermaz.com/free-consult"
+                rel="noopener noreferrer" target="_blank">free consultation</a>, where you will talk to your provider
+              about your concerns and find the treatments that will offer the most benefits. Sometimes the best strategy
+              is a combination of treatments to address multiple concerns during one plan.</div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="fq5">
+              <span class="faq-question-text">How do I book an appointment?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="fq5">We are in the office Monday through Friday from 9:00 am&ndash;5:00 pm. Fill
+              out an <a href="https://lazaderm.zenoti.com/webstoreNew/services/74828e47-a252-49a8-ad9a-468a1a363b5b"
+                rel="noopener noreferrer" target="_blank">online form</a>, and we will get back to you right away, or
+              give us a call at <a href="tel:7018887546" style="color:var(--plum);font-weight:700;">701-888-7546</a>.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         11. FINAL CTA
+    ====================================================== -->
+    <section class="cta-section" id="book" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-section__wave" aria-hidden="true">
+          <svg viewBox="0 0 56 22" fill="none" xmlns="http://www.w3.org/2000/svg" width="56" height="22">
+            <path d="M2 18 Q14 4 28 11 Q42 18 54 4" stroke="rgba(255,255,255,0.5)" stroke-width="2"
+              stroke-linecap="round" fill="none" />
+          </svg>
+        </div>
+        <h2 class="cta-section__title" id="cta-title">Treat Your Skin Today</h2>
+        <p class="cta-section__body">Book your free consultation and take the first step. Our Fargo team is ready to
+          create a personalized treatment plan just for you.</p>
+        <div class="form-embed form-embed--cta" aria-labelledby="cta-title">
+          <!-- Replace the paragraph below with your form embed (iframe, script, etc.). -->
+          <p class="form-embed__placeholder">Form embed code goes here</p>
+        </div>
+        <div class="cta-section__actions">
+          <a href="https://lazaderm.zenoti.com/webstoreNew/services/74828e47-a252-49a8-ad9a-468a1a363b5b"
+            class="btn btn--dark" rel="noopener noreferrer" target="_blank">Book Now</a>
+          <a href="tel:7018887546" class="btn btn--white">Call 701-888-7546</a>
+        </div>
+        <p class="cta-section__phone">Questions? Call us directly: <a href="tel:7018887546">701-888-7546</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="#" class="footer__logo" aria-label="Lazaderm home">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 236 57" aria-hidden="true"
+            focusable="false">
+            <path class="lz-st0"
+              d="M28.5,20.5c-2.2,0-4.5,0.5-6.8,1.6c-5.5,3.3-8.2,7.7-8.2,13.2c0,2.5,0.6,5,1.9,7.4c3.4,5.1,7.6,7.6,12.7,7.6h0.8c3.7,0,6.6-1,8.9-3.1l0,0.6v0.3c0.6,1.5,1.5,2.2,2.8,2.2h0.2c1.8-0.3,2.7-1.2,2.7-2.7v-12c0-2.4-0.5-4.7-1.5-7C38.6,23.2,34.2,20.4,28.5,20.5L28.5,20.5z M37.8,35.7c0,1.3-0.4,2.8-1.1,4.2c-2,3.1-4.6,4.7-7.8,4.7h-0.8c-0.9,0-2-0.2-3.2-0.7c-3.8-1.9-5.7-4.7-5.7-8.5v-0.3c0-0.9,0.2-1.9,0.5-3.1c1.9-4,4.8-6,8.6-6h0.1c1.3,0,2.6,0.3,3.9,0.8c3.6,1.9,5.4,4.7,5.4,8.3L37.8,35.7L37.8,35.7z" />
+            <path class="lz-st0"
+              d="M68.5,20.5l-1.1,0.1H50.2l-1.9-0.2v0.2c-0.9,0-1.5,0.9-1.8,2.7c0,1.4,0.8,2.4,2.4,3l1.7-0.1h11.7l-11.6,15c-2.9,3.4-4.3,5.5-4.3,6.2c0.3,2,1.2,2.9,2.7,2.9h19.2c1.8-0.3,2.6-1.2,2.6-2.7v-0.3c0-1.4-0.8-2.3-2.5-2.7H55.2l13.4-17.2c1.7-1.9,2.5-3.1,2.5-3.8v-0.6C71.1,21.9,70.2,21.1,68.5,20.5L68.5,20.5z" />
+            <path class="lz-st0"
+              d="M87.6,20.5c-2.2,0-4.5,0.5-6.8,1.6c-5.5,3.3-8.2,7.7-8.2,13.2c0,2.5,0.6,5,1.9,7.4c3.4,5.1,7.6,7.6,12.7,7.6H88c3.7,0,6.6-1,8.9-3.1l0,0.6v0.3c0.6,1.5,1.5,2.2,2.8,2.2h0.2c1.8-0.3,2.7-1.2,2.7-2.7v-12c0-2.4-0.5-4.7-1.5-7C97.7,23.2,93.2,20.4,87.6,20.5L87.6,20.5z M96.8,35.7c0,1.3-0.4,2.8-1.1,4.2c-2,3.1-4.6,4.7-7.8,4.7h-0.8c-0.9,0-2-0.2-3.2-0.7c-3.8-1.9-5.7-4.7-5.7-8.5v-0.3c0-0.9,0.2-1.9,0.5-3.1c1.9-4,4.8-6,8.6-6h0.1c1.3,0,2.6,0.3,3.9,0.8c3.6,1.9,5.4,4.7,5.4,8.3L96.8,35.7L96.8,35.7z" />
+            <path class="lz-st0"
+              d="M136,10.6c-0.7-4.1-3.2-7.1-7.4-9.2c-1.6-0.6-3.2-0.9-4.6-1h-0.5c-1.6,0-2.6,1-2.8,3c0,1.5,1,2.4,3,2.7c3.4,0,5.7,1.7,6.8,5.1l0.1,1.8v9.8c-2.4-2.2-5.5-3.2-9.3-3.2c-2.9,0-5.8,0.9-8.5,2.7c-4.3,3.3-6.4,7.4-6.4,12.2c0,3.2,1.1,6.3,3.2,9.3c3.5,3.8,7.2,5.7,11.2,5.7h0.8c4.1,0,7.8-1.8,11.1-5.4c2.3-3.1,3.5-6.1,3.5-9l-0.1-3.5v-6.4h0.1v-12c0-0.7-0.1-1.5-0.1-2.2C136.1,11,136.1,10.8,136,10.6L136,10.6z M130.6,35c0,0.7-0.2,1.6-0.5,2.8c-1.9,4.1-4.8,6.1-8.5,6.1H121c-0.9,0-1.8-0.2-2.9-0.5c-4.1-1.9-6.1-4.8-6.1-8.6v-0.5c0-0.9,0.2-1.9,0.6-3c1.9-4,4.8-6,8.5-6h0.4c0.7,0,1.7,0.2,2.9,0.5c4.1,1.9,6.2,4.8,6.2,8.6L130.6,35L130.6,35z" />
+            <path class="lz-st0"
+              d="M169.9,32c-0.6-2.4-1.7-4.5-3.3-6.4c-4.4-4.5-9.4-6.1-15.1-4.7c-2.2,0.5-4.3,1.7-6.5,3.5c-4.3,4.4-5.7,9.2-4.4,14.5c0.6,2.5,1.9,4.8,3.7,6.7c4.4,4.1,9.2,5.5,14.4,4.2l0.8-0.2c5.2-2,7.5-4.1,7-6.1l-0.1-0.3c-0.4-1.4-1.4-2.1-3.2-2l-0.9,0.2c-1.8,1.5-3.4,2.4-4.8,2.8c-1.2,0.3-2.6,0.4-4.2,0.2c-2.7-0.7-4.6-1.9-5.5-3.5L168,36c1.5-0.4,2.2-1.5,2-3.4L169.9,32L169.9,32z M145.9,35.5c-0.1-0.5,0.1-1.4,0.5-2.8c1.2-3.3,3.3-5.4,6.2-6.1l1.1-0.3c1.9-0.5,4.2,0,6.6,1.4c2,1.6,3.1,2.8,3.2,3.4L145.9,35.5L145.9,35.5z" />
+            <path class="lz-st0"
+              d="M179.7,22.7v-0.4c0-1.3-0.9-2.1-2.7-2.6c-1.8,0-2.8,1-3,3.2v24c0.3,1.9,1.3,2.8,2.8,2.8h0.2c1.9-0.3,2.8-1.2,2.8-2.7V34.7c0-1.3,0.2-2.5,0.6-3.5c1.8-3.8,4.5-5.8,8.3-5.8h0.6c0.2,0,0.4,0,0.6,0V23c0.1-1.3,0.5-2.3,1-3.2c-0.7-0.1-1.4-0.2-2.1-0.2C185,19.7,181.9,20.7,179.7,22.7L179.7,22.7z" />
+            <path class="lz-st0"
+              d="M12.9,50.8c-3.4,0-5.6-1.7-6.7-5.1L6,42.7V9.4C6,7.8,5,6.9,3.2,6.6C1.4,7,0.5,7.9,0.5,9.4v34.3C0.5,49.1,3,53,8,55.5c1.6,0.6,3.1,0.9,4.5,1H13c1.6,0,2.5-1,2.8-3C15.8,52,14.9,51.1,12.9,50.8L12.9,50.8z" />
+            <path class="lz-st0"
+              d="M233.9,26.9c-2.6-4.3-6.2-6.4-10.8-6.4l-2.4,0.3c-3.6,1.1-5.8,2.4-6.6,3.8c-2.3-2.8-5.3-4.2-9-4.2c-2.8,0-5,0.6-6.5,1.8c-0.4-1.2-1.3-1.8-2.6-1.8c-1.8,0-2.7,1-2.9,3.1v23.3c0.3,1.8,1.3,2.7,2.8,2.7h0.2c1.8-0.3,2.7-1.2,2.7-2.6V33.6c0-1.3,0.1-2.2,0.3-3c1.2-3,3.1-4.5,6-4.5h0.3c2.1,0,3.7,0.9,5.1,2.6c0.8,0.7,1.2,2.7,1.2,5.9V47c0,1.4,0.9,2.3,2.7,2.6h0.2c1.5,0,2.4-0.9,2.7-2.7v-15c0-0.4,0.1-0.9,0.2-1.5c1.3-2.8,3.2-4.3,5.6-4.3h1l1.3,0.2c3.1,1.1,4.6,3.1,4.6,6v14.5c0,1.5,0.9,2.4,2.7,2.7h0.2c1.8-0.4,2.7-1.2,2.7-2.5v-15C235.2,30.4,234.8,28.7,233.9,26.9L233.9,26.9z" />
+          </svg>
+        </a>
+        <p class="footer__sub">Medical Spa &mdash; Fargo, ND</p>
+        <nav class="footer__links" aria-label="Footer navigation">
+          <a href="#" class="footer__link">Treatments</a>
+          <a href="#" class="footer__link">Providers</a>
+          <a href="#" class="footer__link">Specials</a>
+          <a href="#" class="footer__link">Testimonials</a>
+          <a href="#" class="footer__link">Privacy Policy</a>
+        </nav>
+        <p class="footer__copy">&copy; 2026 <a href="https://www.lazaderm.com/" class="footer__copy-link">Lazaderm</a>.
+          All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE STICKY CTA -->
+  <div class="mobile-sticky" aria-label="Book your consultation">
+    <a href="#book" class="btn btn--plum">Request Your Free Consult</a>
+  </div>
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+  <script>
+    // FAQ accordion
+    (function () {
+      var items = document.querySelectorAll('.faq-item');
+      items.forEach(function (item) {
+        var btn = item.querySelector('.faq-question');
+        btn.addEventListener('click', function () {
+          var isOpen = item.classList.contains('open');
+          items.forEach(function (i) {
+            i.classList.remove('open');
+            i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+          });
+          if (!isOpen) {
+            item.classList.add('open');
+            btn.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+    })();
+
+    // Scroll reveal
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
+      els.forEach(function (el) { io.observe(el); });
+    })();
+
+    // Smooth scroll with nav offset
+    (function () {
+      document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          var id = this.getAttribute('href');
+          var target = document.querySelector(id);
+          if (target) {
+            e.preventDefault();
+            var offset = document.getElementById('nav').offsetHeight + 8;
+            window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
+          }
+        });
+      });
+    })();
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Landing Pages — Lazaderm (internal)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600&family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --plum: #473359;
+      --plum-dark: #342548;
+      --fg: #1a1a1a;
+      --fg-mid: #4a4a4a;
+      --bg: #ffffff;
+      --bg-section: #f2f2f4;
+      --border: #e0e0e4;
+      --font-display: "Cormorant Garamond", Georgia, serif;
+      --font-body: "M PLUS Rounded 1c", "Helvetica Neue", Arial, sans-serif;
+      --max-w: 880px;
+      --radius: 10px;
+      --shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--fg);
+      background: var(--bg-section);
+      line-height: 1.6;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--plum);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .wrap {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 40px 24px 64px;
+    }
+
+    .masthead {
+      background: var(--plum);
+      color: #fff;
+      padding: 36px 24px 40px;
+      margin-bottom: 36px;
+      box-shadow: var(--shadow);
+    }
+
+    .masthead__inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+
+    .masthead__title {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 500;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .masthead__sub {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.82);
+      max-width: 52ch;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section__head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .section__title {
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 500;
+      color: var(--fg);
+    }
+
+    .section__hint {
+      font-size: 13px;
+      color: var(--fg-mid);
+    }
+
+    .cards {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      box-shadow: var(--shadow);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: rgba(71, 51, 89, 0.35);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .card__text {
+      min-width: 0;
+    }
+
+    .card__name {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--fg);
+      margin-bottom: 4px;
+    }
+
+    .card__meta {
+      font-size: 13px;
+      color: var(--fg-mid);
+    }
+
+    .card__actions {
+      flex-shrink: 0;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 20px;
+      border-radius: 100px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 500;
+      background: var(--plum);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+
+    .btn:hover {
+      background: var(--plum-dark);
+      text-decoration: none;
+    }
+
+    .card--empty {
+      border-style: dashed;
+      background: rgba(255, 255, 255, 0.65);
+    }
+
+    .card--empty .card__name {
+      font-weight: 500;
+      color: var(--fg-mid);
+    }
+
+    .foot {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--fg-mid);
+    }
+
+    .foot code {
+      font-size: 12px;
+      background: #e8e4ec;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="masthead">
+    <div class="masthead__inner">
+      <h1 class="masthead__title">Lazaderm landing pages</h1>
+      <p class="masthead__sub">Internal index for location and procedure landers. Open a page to preview or QA.</p>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <section class="section" aria-labelledby="loc-heading">
+      <div class="section__head">
+        <h2 class="section__title" id="loc-heading">Location landings</h2>
+        <span class="section__hint">One page per market / medspa location</span>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="card__text">
+            <div class="card__name">Chandler, AZ</div>
+            <div class="card__meta">Location landing · template reference</div>
+          </div>
+          <div class="card__actions">
+            <a class="btn" href="chandler-landing.html">Open page</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card__text">
+            <div class="card__name">Fargo, ND</div>
+            <div class="card__meta">Location landing · <code>fargo-nd-landing.html</code></div>
+          </div>
+          <div class="card__actions">
+            <a class="btn" href="fargo-nd-landing.html">Open page</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card__text">
+            <div class="card__name">Sioux Falls, SD</div>
+            <div class="card__meta">Location landing · <code>sioux-falls-sd-landing.html</code></div>
+          </div>
+          <div class="card__actions">
+            <a class="btn" href="sioux-falls-sd-landing.html">Open page</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card__text">
+            <div class="card__name">Sioux City, IA</div>
+            <div class="card__meta">Location landing · <code>sioux-city-ia-landing.html</code></div>
+          </div>
+          <div class="card__actions">
+            <a class="btn" href="sioux-city-ia-landing.html">Open page</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card__text">
+            <div class="card__name">Watertown, SD</div>
+            <div class="card__meta">Location landing · <code>watertown-sd-landing.html</code></div>
+          </div>
+          <div class="card__actions">
+            <a class="btn" href="watertown-sd-landing.html">Open page</a>
+          </div>
+        </article>
+        <!-- Add new location landers: copy the <article class="card"> block and update name, meta, href. -->
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="proc-heading">
+      <div class="section__head">
+        <h2 class="section__title" id="proc-heading">Procedure landings</h2>
+        <span class="section__hint">Treatment- or service-focused campaigns</span>
+      </div>
+      <div class="cards">
+        <article class="card card--empty">
+          <div class="card__text">
+            <div class="card__name">No procedure landers in this folder yet</div>
+            <div class="card__meta">Create a new HTML file (e.g. <code>botox-landing.html</code>), then add a card with
+              its link here.</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer class="foot">
+     
+    </footer>
+  </div>
+</body>
+
+</html>
