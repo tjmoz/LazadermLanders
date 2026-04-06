@@ -1310,6 +1310,120 @@
     .why-bullets li strong {
       color: var(--fg);
     }
+
+    /* Target + Elite Advantage spotlight (procedure page) */
+    .cs-elite-spotlight {
+      position: relative;
+      padding: 72px 0 80px;
+      background: linear-gradient(165deg, #fbfafc 0%, var(--bg-light) 48%, #eef0f3 100%);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .cs-elite-spotlight::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--plum-dark), var(--plum-mid), var(--plum));
+    }
+
+    .cs-elite-spotlight__inner {
+      max-width: 920px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .cs-elite-spotlight__headline {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 500;
+      color: var(--fg);
+      line-height: 1.2;
+      margin: 0 auto 36px;
+      max-width: 720px;
+      text-wrap: balance;
+    }
+
+    .cs-elite-spotlight__pct {
+      color: var(--plum);
+      font-weight: 600;
+    }
+
+    .cs-elite-spotlight__subhead {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 2.8vw, 30px);
+      font-weight: 600;
+      color: var(--fg);
+      margin: 0 0 28px;
+      line-height: 1.25;
+    }
+
+    .cs-elite-spotlight__grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      text-align: left;
+    }
+
+    @media (min-width: 700px) {
+      .cs-elite-spotlight__grid {
+        gap: 18px;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .cs-elite-spotlight__grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .cs-elite-spotlight__card {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 20px 20px 20px 18px;
+      background: var(--bg);
+      border: 1px solid rgba(71, 51, 89, 0.1);
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+      transition: border-color var(--trans), box-shadow var(--trans), transform var(--trans);
+    }
+
+    .cs-elite-spotlight__card:hover {
+      border-color: rgba(71, 51, 89, 0.22);
+      box-shadow: var(--shadow-card);
+      transform: translateY(-2px);
+    }
+
+    .cs-elite-spotlight__icon {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(145deg, rgba(71, 51, 89, 0.12), rgba(71, 51, 89, 0.05));
+      color: var(--plum);
+    }
+
+    .cs-elite-spotlight__icon svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .cs-elite-spotlight__card p {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--fg);
+      line-height: 1.45;
+      margin: 0;
+      padding-top: 4px;
+    }
   </style>
 </head>
 
@@ -1390,35 +1504,77 @@
       </div>
     </section>
 
-    <!-- Target + Elite Advantage (matches markdown ## and ** block) -->
-    <section class="section section--light" style="padding-top:56px;padding-bottom:56px;" aria-labelledby="target-areas-title">
+    <!-- Target + Elite Advantage -->
+    <section class="section cs-elite-spotlight" aria-labelledby="target-areas-title">
       <div class="container">
-        <div class="sec-head" style="margin-bottom:28px;">
-          <h2 class="sec-head__title" id="target-areas-title">Target specific areas of fat with up to 25% fat loss with each appointment.</h2>
+        <div class="cs-elite-spotlight__inner">
+          <h2 class="cs-elite-spotlight__headline" id="target-areas-title">Target specific areas of fat with up to <span class="cs-elite-spotlight__pct">25%</span> fat loss with each appointment.</h2>
+          <p class="cs-elite-spotlight__subhead" id="elite-advantage-label">The CoolSculpting Elite Advantage</p>
+          <div class="cs-elite-spotlight__grid" aria-labelledby="elite-advantage-label">
+            <article class="cs-elite-spotlight__card">
+              <div class="cs-elite-spotlight__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
+                </svg>
+              </div>
+              <p>Dual applicators.</p>
+            </article>
+            <article class="cs-elite-spotlight__card">
+              <div class="cs-elite-spotlight__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
+                </svg>
+              </div>
+              <p>Larger cooling panels.</p>
+            </article>
+            <article class="cs-elite-spotlight__card">
+              <div class="cs-elite-spotlight__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z" />
+                </svg>
+              </div>
+              <p>Two zones treated simultaneously.</p>
+            </article>
+            <article class="cs-elite-spotlight__card">
+              <div class="cs-elite-spotlight__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <p>Half the time, twice the coverage.</p>
+            </article>
+          </div>
         </div>
-        <p style="font-size:17px;font-weight:700;color:var(--fg);text-align:center;margin-bottom:12px;">The CoolSculpting Elite Advantage</p>
-        <p style="font-size:16px;color:var(--fg-mid);text-align:center;max-width:720px;margin:0 auto;line-height:1.75;">Dual applicators. Larger cooling panels. Two zones treated simultaneously. Half the time, twice the coverage.</p>
       </div>
     </section>
 
-    <!-- You Aren’t Failing -->
+    <!-- You Aren’t Failing (layout matches About Lazaderm on location landers) -->
     <section class="section" id="stubborn-fat" aria-labelledby="stubborn-title">
       <div class="container">
-        <div class="sec-head">
-          <h2 class="sec-head__title" id="stubborn-title">You Aren&rsquo;t Failing. Your Fat Cells Are Stubborn.</h2>
-        </div>
-        <p style="font-size:16px;color:var(--fg-mid);max-width:720px;margin:0 auto 20px;text-align:center;line-height:1.75;">Where your body stores fat is largely genetic. You can lose weight, build muscle and eat clean, but still carry pockets of fat in places that refuse to respond. It is biology, rather than a discipline problem. CoolSculpting Elite at Lazaderm treats these specific resistant fat deposits with cooling technology that causes cell death. In the following weeks, the damaged fat cells are gone permanently.</p>
-        <p style="font-size:16px;font-weight:700;color:var(--fg);max-width:640px;margin:0 auto 14px;text-align:center;">CoolSculpting&rsquo;s benefits include:</p>
-        <ul class="content-list reveal">
-          <li>FDA-cleared for 9 body zones, chin to thighs and everything between</li>
-          <li>Walk in on your lunch break, walk out and finish your day</li>
-          <li>Permanent elimination of treated fat cells (not shrinking &mdash; gone)</li>
-          <li>No anesthesia, incisions or compression garments</li>
-          <li>Visible changes in three weeks, full results by 3 months</li>
-          <li>Flat-rate pricing per area</li>
-        </ul>
-        <div style="text-align:center;">
-          <a href="#book" class="btn btn--plum">Book Treatment</a>
+        <div class="about-grid">
+          <div class="about-visual reveal" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+              stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <div class="reveal">
+            <h2 class="sec-head__title" style="text-align:left;" id="stubborn-title">You Aren&rsquo;t Failing. Your Fat Cells Are Stubborn.</h2>
+            <p style="font-size:16px;color:var(--fg-mid);line-height:1.75;margin-bottom:12px;">
+              Where your body stores fat is largely genetic. You can lose weight, build muscle and eat clean, but still carry pockets of fat in places that refuse to respond. It is biology, rather than a discipline problem. CoolSculpting Elite at Lazaderm treats these specific resistant fat deposits with cooling technology that causes cell death. In the following weeks, the damaged fat cells are gone permanently.
+            </p>
+            <p style="font-size:15px;color:var(--fg-mid);margin-bottom:4px;">CoolSculpting&rsquo;s benefits include:</p>
+            <ul class="about-checklist" aria-label="CoolSculpting benefits">
+              <li class="check-item"><span class="check-item__dot" aria-hidden="true"></span>FDA-cleared for 9 body zones, chin to thighs and everything between</li>
+              <li class="check-item"><span class="check-item__dot" aria-hidden="true"></span>Walk in on your lunch break, walk out and finish your day</li>
+              <li class="check-item"><span class="check-item__dot" aria-hidden="true"></span>Permanent elimination of treated fat cells (not shrinking &mdash; gone)</li>
+              <li class="check-item"><span class="check-item__dot" aria-hidden="true"></span>No anesthesia, incisions or compression garments</li>
+              <li class="check-item"><span class="check-item__dot" aria-hidden="true"></span>Visible changes in three weeks, full results by 3 months</li>
+              <li class="check-item"><span class="check-item__dot" aria-hidden="true"></span>Flat-rate pricing per area</li>
+            </ul>
+            <a href="#book" class="btn btn--plum">Book Treatment</a>
+          </div>
         </div>
       </div>
     </section>
@@ -1470,10 +1626,7 @@
         <div class="sec-head">
           <h2 class="sec-head__title" id="experts-title">Meet Our Experts</h2>
         </div>
-        <p style="text-align:center;font-size:15px;color:var(--fg-mid);font-style:italic;margin-bottom:28px;">Add staff images and names.</p>
-        <div class="why__cta">
-          <a href="#book" class="btn btn--outline">View All Staff</a>
-        </div>
+        <p style="text-align:center;font-size:15px;color:var(--fg-mid);font-style:italic;margin-bottom:0;">Add staff images and names.</p>
       </div>
     </section>
 
@@ -1497,25 +1650,36 @@
       </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="section section--gray" id="testimonials" aria-labelledby="testimonials-title">
+    <!-- Testimonials (layout matches location landing pages) -->
+    <section class="section section--light" id="testimonials" aria-labelledby="testimonials-title">
       <div class="container">
         <div class="sec-head">
-          <h2 class="sec-head__title" id="testimonials-title">Testimonials</h2>
+          <h2 class="sec-head__title" id="testimonials-title">What Our Patients Say</h2>
         </div>
         <div class="testimonials-grid reveal">
           <article class="testimonial-card">
-            <p class="testimonial-card__text" style="font-style:normal;">&ldquo;I&rsquo;ve been to other places in the past, but this office is by far the best! The staff here is absolutely top-notch. From Botox and fillers to laser treatments and CoolSculpting, every service I&rsquo;ve had has exceeded my expectations. I wouldn&rsquo;t go anywhere else.&rdquo; &mdash; Victoria R.</p>
+            <div class="testimonial-card__stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-card__text">&ldquo;I&rsquo;ve been to other places in the past, but this office is by far the best! The staff here is absolutely top-notch. From Botox and fillers to laser treatments and CoolSculpting, every service I&rsquo;ve had has exceeded my expectations. I wouldn&rsquo;t go anywhere else.&rdquo;</p>
+            <div class="testimonial-card__author">&#8212; Victoria R.</div>
           </article>
           <article class="testimonial-card">
-            <p class="testimonial-card__text" style="font-style:normal;">&ldquo;This office and absolutely every person in the office are the most professional and caring staff you will ever find.  From my first consultation where I was comfortable asking questions, discussing pricing and the help to decide on a treatment that was best for me till today my last check up was the BEST!!!!!&rdquo; &mdash; Patricia T.</p>
+            <div class="testimonial-card__stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-card__text">&ldquo;This office and absolutely every person in the office are the most professional and caring staff you will ever find.  From my first consultation where I was comfortable asking questions, discussing pricing and the help to decide on a treatment that was best for me till today my last check up was the BEST!!!!!&rdquo;</p>
+            <div class="testimonial-card__author">&#8212; Patricia T.</div>
           </article>
           <article class="testimonial-card">
-            <p class="testimonial-card__text" style="font-style:normal;">&ldquo;This medspa is wonderful! I don't mind driving 25 minutes to come here. Everything about this place is great.  The girl at the front desk has always been friendly and polite. The prices are the best I have found. This is the only medspa I am going to for all my beauty needs.&rdquo; &mdash; Armanda C.</p>
+            <div class="testimonial-card__stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-card__text">&ldquo;This medspa is wonderful! I don&rsquo;t mind driving 25 minutes to come here. Everything about this place is great.  The girl at the front desk has always been friendly and polite. The prices are the best I have found. This is the only medspa I am going to for all my beauty needs.&rdquo;</p>
+            <div class="testimonial-card__author">&#8212; Armanda C.</div>
           </article>
           <article class="testimonial-card">
-            <p class="testimonial-card__text" style="font-style:normal;">&ldquo;The staff at Lazaderm are awesome! From the front desk to procedures, they are knowledgeable and my results have been great!   It's also nice that I can always get in fairly quickly, I've never had to wait too long for an appointment. I would highly recommend Lazaderm!&rdquo; &mdash; Dina B.</p>
+            <div class="testimonial-card__stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-card__text">&ldquo;The staff at Lazaderm are awesome! From the front desk to procedures, they are knowledgeable and my results have been great!   It&rsquo;s also nice that I can always get in fairly quickly, I&rsquo;ve never had to wait too long for an appointment. I would highly recommend Lazaderm!&rdquo;</p>
+            <div class="testimonial-card__author">&#8212; Dina B.</div>
           </article>
+        </div>
+        <div class="testimonials__footer">
+          <a href="#">Read more patient stories &rarr;</a>
         </div>
       </div>
     </section>

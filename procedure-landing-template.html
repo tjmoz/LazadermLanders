@@ -4,9 +4,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="robots" content="noindex, nofollow" />
   <meta name="description"
-    content="Lazaderm in Sioux City, IA offers advanced aesthetic treatments for face and body in a warm, spa-like setting with physician-grade technology. Book your consultation today." />
-  <title>Medical Spa Treatments in Sioux City, IA | Lazaderm</title>
+    content="Procedure landing page template — replace with meta description from your procedure markdown (≈155 characters)." />
+  <title>Procedure Name | Lazaderm</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -757,22 +758,6 @@
       aspect-ratio: 1;
     }
 
-    .person-item__ph {
-      aspect-ratio: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0;
-      background: linear-gradient(160deg, var(--bg-section) 0%, #ddd8e4 100%);
-      color: var(--plum);
-    }
-
-    .person-item__ph svg {
-      width: 52px;
-      height: 52px;
-      opacity: 0.45;
-    }
-
     .person-item h3 {
       font-family: var(--font-display);
       font-size: 18px;
@@ -1246,11 +1231,225 @@
         padding: 64px 0;
       }
     }
+
+    /* ============================================================
+       VIDEO EMBED (Discover section)
+    ============================================================ */
+    .video-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-card);
+      aspect-ratio: 16 / 9;
+      background: #000;
+    }
+
+    .video-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .about-us-lead {
+      font-family: var(--font-display);
+      font-size: clamp(20px, 2.5vw, 26px);
+      font-weight: 500;
+      color: var(--fg);
+      line-height: 1.35;
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 40px;
+    }
+
+    .content-list {
+      max-width: 640px;
+      margin: 0 auto 28px;
+      padding-left: 0;
+    }
+
+    .content-list li {
+      font-size: 16px;
+      color: var(--fg-mid);
+      line-height: 1.7;
+      padding-left: 22px;
+      position: relative;
+      margin-bottom: 10px;
+      list-style: none;
+    }
+
+    .content-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--plum);
+    }
+
+    .why-bullets {
+      max-width: 720px;
+      margin: 0 auto 40px;
+    }
+
+    .why-bullets li {
+      font-size: 16px;
+      color: var(--fg-mid);
+      line-height: 1.75;
+      margin-bottom: 14px;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .why-bullets li strong {
+      color: var(--fg);
+    }
+
+    /* Procedure spotlight band (headline + stat + 4 feature cards; matches live procedure landers) */
+    .proc-spotlight {
+      position: relative;
+      padding: 72px 0 80px;
+      background: linear-gradient(165deg, #fbfafc 0%, var(--bg-light) 48%, #eef0f3 100%);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .proc-spotlight::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--plum-dark), var(--plum-mid), var(--plum));
+    }
+
+    .proc-spotlight__inner {
+      max-width: 920px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .proc-spotlight__headline {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 500;
+      color: var(--fg);
+      line-height: 1.2;
+      margin: 0 auto 36px;
+      max-width: 720px;
+      text-wrap: balance;
+    }
+
+    .proc-spotlight__pct {
+      color: var(--plum);
+      font-weight: 600;
+    }
+
+    .proc-spotlight__subhead {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 2.8vw, 30px);
+      font-weight: 600;
+      color: var(--fg);
+      margin: 0 0 28px;
+      line-height: 1.25;
+    }
+
+    .proc-spotlight__grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      text-align: left;
+    }
+
+    @media (min-width: 700px) {
+      .proc-spotlight__grid {
+        gap: 18px;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .proc-spotlight__grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .proc-spotlight__card {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 20px 20px 20px 18px;
+      background: var(--bg);
+      border: 1px solid rgba(71, 51, 89, 0.1);
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+      transition: border-color var(--trans), box-shadow var(--trans), transform var(--trans);
+    }
+
+    .proc-spotlight__card:hover {
+      border-color: rgba(71, 51, 89, 0.22);
+      box-shadow: var(--shadow-card);
+      transform: translateY(-2px);
+    }
+
+    .proc-spotlight__icon {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(145deg, rgba(71, 51, 89, 0.12), rgba(71, 51, 89, 0.05));
+      color: var(--plum);
+    }
+
+    .proc-spotlight__icon svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .proc-spotlight__card p {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--fg);
+      line-height: 1.45;
+      margin: 0;
+      padding-top: 4px;
+    }
   </style>
 </head>
 
 <body>
 
+  <!--
+    PROCEDURE LANDING TEMPLATE — Lazaderm
+    ------------------------------------------------------------
+    Workflow:
+    1. Duplicate this file: cp procedure-landing-template.html your-procedure-landing.html
+    2. Replace all bracketed [PLACEHOLDERS] and copy in text from your markdown (keep structure).
+    3. Set <title> and meta description in <head>.
+    4. Hero: H1, form title, Book Now — match markdown “Contact Form” lines.
+    5. Spotlight: first H2 block + bold subhead + 4 short lines (one sentence each in cards).
+    6. Detail section (#proc-detail): about-grid — second H2, body, checklist label + items, CTA.
+    7. Discover: section title + YouTube embed src/title.
+    8. About Us trust cards: usually unchanged.
+    9. Experts: placeholder until staff added (no external links).
+    10. Why Lazaderm: intro + “Why choose us” bullets from markdown.
+    11. Testimonials: stars + quote + author per card (match location lander styling).
+    12. FAQ: one .faq-item block per question; keep ids fq1, fq2, … unique.
+    13. Final CTA: form embed + “Book My Consultation” (or per markdown).
+    14. Add the new filename to index.html under “Procedure landings.”
+    Conventions: no wave dividers; testimonials = section--light + stars + author line; no “View all staff” off-page links.
+  -->
 
   <!-- NAVIGATION -->
   <nav class="nav" id="nav" aria-label="Main navigation">
@@ -1283,9 +1482,11 @@
           </svg>
         </a>
         <div class="nav__links">
-          <a href="#treatments" class="nav__link">Treatments</a>
-          <a href="#providers" class="nav__link">Providers</a>
+          <a href="#about" class="nav__link">About Us</a>
+          <a href="#discover" class="nav__link">Discover</a>
+          <a href="#experts" class="nav__link">Experts</a>
           <a href="#why-us" class="nav__link">Why Us</a>
+          <a href="#testimonials" class="nav__link">Testimonials</a>
           <a href="#faq" class="nav__link">FAQ</a>
         </div>
         <a href="#book" class="btn btn--plum nav__cta">Book Now</a>
@@ -1296,11 +1497,8 @@
 
   <main>
 
-    <!-- =====================================================
-         1. HERO / INTRO
-    ====================================================== -->
+    <!-- 1. HERO — [H1 from markdown] + contact form block -->
     <section class="hero" id="home" aria-labelledby="hero-title">
-      <!-- Background: gradient below, or add <img class="hero__bg-img" src="..." alt=""> for a photo (cover, top-aligned). -->
       <div class="hero__bg" aria-hidden="true">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
           <path stroke-linecap="round" stroke-linejoin="round"
@@ -1308,26 +1506,16 @@
         </svg>
         Hero Image
       </div>
-      <!-- Plum overlay with wave texture -->
       <div class="hero__overlay">
         <div class="container">
           <div class="hero__content">
             <div class="hero__text">
-              <h1 class="hero__headline" id="hero-title">
-                Your Destination for Radiant Skin and Confident Beauty
-              </h1>
-              <h2 class="hero__deck" id="hero-subtitle">
-                At Lazaderm, we want you to feel refreshed while still looking like you. We offer Sioux City&rsquo;s most
-                advanced aesthetic treatments for the face and body.
-              </h2>
-              <p class="hero__bold-lead">Comprehensive, Patient-Centered Care.</p>
-              <p class="hero__body">We help you to look your best by offering treatments that complement your natural
-                features. Every treatment is centered around you and what you want.</p>
+              <h1 class="hero__headline" id="hero-title">[Primary headline &mdash; procedure name and key benefit]</h1>
             </div>
             <div class="hero__aside">
-              <h3 class="hero__form-title" id="hero-form-heading">Start Your Transformation Today</h3>
+              <p class="hero__body" style="font-size:13px;font-style:italic;color:rgba(255,255,255,0.75);margin-bottom:8px;text-align:center;">Contact Form:</p>
+              <h3 class="hero__form-title" id="hero-form-heading">[Form title, e.g. Claim your free consultation]</h3>
               <div class="form-embed form-embed--hero" aria-labelledby="hero-form-heading">
-                <!-- Replace the paragraph below with your form embed (iframe, script, etc.). -->
                 <p class="form-embed__placeholder">Form embed code goes here</p>
               </div>
               <a href="#book" class="btn btn--dark hero__form-cta">Book Now</a>
@@ -1337,11 +1525,52 @@
       </div>
     </section>
 
+    <!-- 2. SPOTLIGHT — first H2 + bold subhead + 4 one-line benefits (from markdown) -->
+    <section class="section proc-spotlight" aria-labelledby="spotlight-title">
+      <div class="container">
+        <div class="proc-spotlight__inner">
+          <h2 class="proc-spotlight__headline" id="spotlight-title">[First major H2 after hero &mdash; optional: wrap a stat in span.proc-spotlight__pct]</h2>
+          <p class="proc-spotlight__subhead" id="spotlight-subhead">[Bold subheadline, e.g. The [Treatment] Advantage]</p>
+          <div class="proc-spotlight__grid" aria-labelledby="spotlight-subhead">
+            <article class="proc-spotlight__card">
+              <div class="proc-spotlight__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
+                </svg>
+              </div>
+              <p>[Benefit sentence one.]</p>
+            </article>
+            <article class="proc-spotlight__card">
+              <div class="proc-spotlight__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
+                </svg>
+              </div>
+              <p>[Benefit sentence two.]</p>
+            </article>
+            <article class="proc-spotlight__card">
+              <div class="proc-spotlight__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z" />
+                </svg>
+              </div>
+              <p>[Benefit sentence three.]</p>
+            </article>
+            <article class="proc-spotlight__card">
+              <div class="proc-spotlight__icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <p>[Benefit sentence four.]</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <!-- =====================================================
-         2. ABOUT LAZADERM
-    ====================================================== -->
-    <section class="section" id="about" aria-labelledby="about-title">
+    <!-- 3. DETAIL — about-grid (same layout as “About Lazaderm” on location landers) -->
+    <section class="section" id="proc-detail" aria-labelledby="proc-detail-title">
       <div class="container">
         <div class="about-grid">
           <div class="about-visual reveal" aria-hidden="true">
@@ -1352,232 +1581,94 @@
             </svg>
           </div>
           <div class="reveal">
-            <h2 class="sec-head__title" style="text-align:left;" id="about-title">Where Wellness Meets Confidence</h2>
+            <h2 class="sec-head__title" style="text-align:left;" id="proc-detail-title">[Section H2 &mdash; patient story or education headline]</h2>
             <p style="font-size:16px;color:var(--fg-mid);line-height:1.75;margin-bottom:12px;">
-              Our clinic in Sioux City, IA, combines a warm, spa-like atmosphere with physician-grade technology sourced
-              from industry leaders worldwide. As soon as you reach out to us, you will notice a difference.
+              [Supporting body copy from markdown. Explain the concern and how Lazaderm addresses it.]
             </p>
-            <p style="font-size:15px;color:var(--fg-mid);margin-bottom:4px;">At Lazaderm, you can expect:</p>
-            <ul class="about-checklist" aria-label="What to expect at Lazaderm">
-              <li class="check-item"><span class="check-item__dot" aria-hidden="true"></span>Safety and satisfaction</li>
-              <li class="check-item"><span class="check-item__dot" aria-hidden="true"></span>Consultations that focus on
-                your unique goals and concerns</li>
-              <li class="check-item"><span class="check-item__dot" aria-hidden="true"></span>Subtle, natural-looking
-                outcomes that enhance your unique features</li>
-              <li class="check-item"><span class="check-item__dot" aria-hidden="true"></span>State-of-the-art devices and
-                products backed by clinical research</li>
-              <li class="check-item"><span class="check-item__dot" aria-hidden="true"></span>A care-first philosophy that
-                elevates your well-being above everything else</li>
+            <p style="font-size:15px;color:var(--fg-mid);margin-bottom:4px;">[List intro line, e.g. Treatment benefits include:]</p>
+            <ul class="about-checklist" aria-label="Procedure benefits">
+              <li class="check-item"><span class="check-item__dot" aria-hidden="true"></span>[Checklist item one]</li>
+              <li class="check-item"><span class="check-item__dot" aria-hidden="true"></span>[Checklist item two]</li>
+              <li class="check-item"><span class="check-item__dot" aria-hidden="true"></span>[Checklist item three]</li>
+              <li class="check-item"><span class="check-item__dot" aria-hidden="true"></span>[Add more list items as needed]</li>
             </ul>
-            <a href="#book" class="btn btn--plum">Book Your Treatment</a>
+            <a href="#book" class="btn btn--plum">[Primary CTA, e.g. Book Treatment]</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- =====================================================
-         3. EXPLORE LAZADERM (Media Section)
-    ====================================================== -->
-    <section class="section section--light" id="explore" aria-labelledby="explore-title">
+    <!-- 4. VIDEO — [VIDEO](url) from markdown -->
+    <section class="section section--gray" id="discover" aria-labelledby="discover-title">
       <div class="container">
         <div class="sec-head">
-          <h2 class="sec-head__title" id="explore-title">Explore Lazaderm</h2>
-          <p class="sec-head__sub">Video, carousel of pictures, or similar&mdash;see what a visit to our Sioux City medspa
-            can include.</p>
+          <h2 class="sec-head__title" id="discover-title">[Discover / Video section H2]</h2>
         </div>
-        <div class="explore__placeholder reveal" aria-label="Video or image carousel placeholder">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-            stroke-width="1.5">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          <p>Video / Image Carousel</p>
+        <div class="video-wrap reveal">
+          <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="[Procedure video title]"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen loading="lazy"></iframe>
         </div>
       </div>
     </section>
 
-    <!-- =====================================================
-         4. TRUST INDICATORS
-    ====================================================== -->
-    <section class="section section--gray" id="trust" aria-labelledby="trust-title">
+    <!-- 5. ABOUT US — trust strip (usually unchanged across procedures) -->
+    <section class="section" id="about" aria-labelledby="about-us-title">
       <div class="container">
         <div class="sec-head">
-          <h2 class="sec-head__title" id="trust-title">About Lazaderm</h2>
-          <p class="sec-head__sub">At Lazaderm, we believe that your skin deserves the best care. Every treatment is backed
-            by science and customized for you.</p>
+          <h2 class="sec-head__title" id="about-us-title">About Us</h2>
         </div>
+        <h4 class="about-us-lead">Lazaderm is a physician-directed luxury aesthetic clinic. Your body deserves clinical precision plus the relaxing environment of a spa.</h4>
         <div class="trust-grid reveal">
           <article class="trust-card">
             <div class="trust-card__value">20+</div>
-            <div class="trust-card__label">Years Cosmetic Experience</div>
-            <p class="trust-card__desc">We have been offering patient-centered aesthetic care for more than 20 years.
-            </p>
+            <div class="trust-card__label">Years Aesthetic Experience</div>
+            <p class="trust-card__desc">Decades of expertise and thousands of satisfied patients.</p>
           </article>
           <article class="trust-card">
             <div class="trust-card__value">MD-Led</div>
             <div class="trust-card__label">Physician-Led Medical Spa</div>
-            <p class="trust-card__desc">MD oversight ensures your safety is always prioritized.</p>
+            <p class="trust-card__desc">MD oversight ensures highest levels of care and safety.</p>
           </article>
           <article class="trust-card">
-            <div class="trust-card__value">4.8 &#9733;</div>
-            <div class="trust-card__label">Google Rating</div>
-            <p class="trust-card__desc">Patients love our welcoming atmosphere and superior results.</p>
+            <div class="trust-card__value">4.8</div>
+            <div class="trust-card__label">Rating on Google</div>
+            <p class="trust-card__desc">Guests call us knowledgeable, welcoming and results-driven.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- =====================================================
-         5. TREATMENT CATEGORIES
-    ====================================================== -->
-    <section class="section" id="treatments" aria-labelledby="treatments-title">
+    <!-- Meet Our Experts — optional staff grid; placeholder until assets exist -->
+    <section class="section section--light" id="experts" aria-labelledby="experts-title">
       <div class="container">
         <div class="sec-head">
-          <h2 class="sec-head__title" id="treatments-title">Medical Spa Treatments in Sioux City</h2>
-          <p class="sec-head__sub">Advanced face and body treatments tailored to your goals by our experienced Sioux City
-            team.</p>
+          <h2 class="sec-head__title" id="experts-title">Meet Our Experts</h2>
         </div>
-        <div class="treatments-grid reveal">
-          <article class="treatment-card">
-            <div class="treatment-card__label">Injectable Treatments</div>
-            <h3 class="treatment-card__title">Injectables</h3>
-            <p class="treatment-card__desc">Smooth wrinkles, restore volume and reduce under-eye bags.</p>
-            <ul class="treatment-card__list">
-              <li>Neuromodulators (Botox&reg;, Dysport&reg;)</li>
-              <li>Dermal Fillers (JUV&Eacute;DERM&reg;, Restylane&reg;)</li>
-              <li>Tired Eye Treatment</li>
-            </ul>
-          </article>
-          <article class="treatment-card">
-            <div class="treatment-card__label">Laser and Light Treatments</div>
-            <h3 class="treatment-card__title">Laser &amp; Light</h3>
-            <p class="treatment-card__desc">Refresh the surface of your skin and remove tattoos and excess hair.</p>
-            <ul class="treatment-card__list">
-              <li>BroadBand Light (BBL)&reg; HERO&trade;</li>
-              <li>Clear + Brilliant&reg;</li>
-              <li>Laser Hair Removal</li>
-              <li>Laser Tattoo Removal</li>
-              <li>MicroLaserPeel&reg;</li>
-              <li>Profractional&reg; Laser</li>
-              <li>Q-Switch Laser</li>
-              <li>Sciton Moxi&reg; Laser</li>
-            </ul>
-          </article>
-          <article class="treatment-card">
-            <div class="treatment-card__label">Body Contouring Treatments</div>
-            <h3 class="treatment-card__title">Body Contouring</h3>
-            <p class="treatment-card__desc">Reduce stubborn fat in the abdomen, thighs, chin and more.</p>
-            <ul class="treatment-card__list">
-              <li>CoolSculpting&reg; Elite</li>
-            </ul>
-          </article>
-          <article class="treatment-card">
-            <div class="treatment-card__label">Facial and Skin Treatments</div>
-            <h3 class="treatment-card__title">Facial &amp; Skin</h3>
-            <p class="treatment-card__desc">Resurface and restore your complexion with professional-grade treatments.</p>
-            <ul class="treatment-card__list">
-              <li>Chemical Peels</li>
-              <li>Dermaplaning</li>
-              <li>HydraFacial&trade;</li>
-              <li>Microneedling</li>
-              <li>Vivace&reg; RF Microneedling</li>
-            </ul>
-          </article>
-          <article class="treatment-card">
-            <div class="treatment-card__label">Vein Treatments</div>
-            <h3 class="treatment-card__title">Vein Treatments</h3>
-            <p class="treatment-card__desc">Eliminate spider veins and varicose veins.</p>
-            <ul class="treatment-card__list">
-              <li>Conservative Vein Therapy</li>
-              <li>Laser Vein Reduction</li>
-              <li>Non-Invasive Vein Evaluation</li>
-              <li>Sclerotherapy</li>
-              <li>Ambulatory Phlebectomy</li>
-            </ul>
-          </article>
-          <article class="treatment-card">
-            <div class="treatment-card__label">Brow and Lash Treatments</div>
-            <h3 class="treatment-card__title">Brow &amp; Lash</h3>
-            <p class="treatment-card__desc">Put on the finishing touches with professional treatments.</p>
-            <ul class="treatment-card__list">
-              <li>Eyebrow Wax</li>
-              <li>Eyebrow Lamination</li>
-              <li>Eyebrow Tint</li>
-              <li>Eye Lash Lift</li>
-              <li>Eye Lash Tint</li>
-            </ul>
-          </article>
-        </div>
+        <p style="text-align:center;font-size:15px;color:var(--fg-mid);font-style:italic;margin-bottom:0;">Add staff images and names.</p>
       </div>
     </section>
 
-    <!-- =====================================================
-         6. PROVIDERS
-    ====================================================== -->
-    <section class="section section--gray" id="providers" aria-labelledby="providers-title">
+    <!-- 6. WHY LAZADERM — intro + “Why choose us” bullets -->
+    <section class="section" id="why-us" aria-labelledby="why-laz-title">
       <div class="container">
         <div class="sec-head">
-          <h2 class="sec-head__title" id="providers-title">Meet Your Providers in Sioux City</h2>
-          <p class="sec-head__sub">Your treatments will be performed by certified and licensed practitioners, with all
-            care overseen by a medical director.</p>
-        </div>
-        <div class="reveal" style="text-align:center;max-width:560px;margin:0 auto;">
-          <p style="font-size:16px;color:var(--fg-mid);line-height:1.75;margin-bottom:0;">
-            Meet our licensed team in Sioux City&mdash;nurse practitioners, aestheticians, and physician oversight for
-            every visit.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- =====================================================
-         7. WHY CHOOSE LAZADERM
-    ====================================================== -->
-    <section class="section" id="why-us" aria-labelledby="why-title">
-      <div class="container">
-        <div class="sec-head">
-          <h2 class="sec-head__title" id="why-title">Why Choose Lazaderm?</h2>
+          <h2 class="sec-head__title" id="why-laz-title">[Why Choose Lazaderm for &hellip; ?]</h2>
         </div>
         <p class="why__intro">
-          With more than two decades of proven results across four states, Lazaderm has earned a reputation for
-          consistency and care. We strive for excellence in all of our services, getting to know our patients so we can
-          recommend the best treatment plans.
+          [Intro paragraph from markdown: why provider and setting matter for this procedure.]
         </p>
-        <div class="why-grid reveal">
-          <article class="why-card">
-            <h3 class="why-card__title">Flexible Payment Plans</h3>
-            <p class="why-card__body">Payment plans with Cherry from All&eacute; or CareCredit help you break up costs into
-              monthly payments.</p>
-          </article>
-          <article class="why-card">
-            <h3 class="why-card__title">Full Menu of Aesthetic Treatments</h3>
-            <p class="why-card__body">A full range of options to treat signs of aging, unwanted fat, visible veins and
-              more.</p>
-          </article>
-          <article class="why-card">
-            <h3 class="why-card__title">Friendly, Experienced Providers</h3>
-            <p class="why-card__body">Warm and friendly providers who are skilled and experienced.</p>
-          </article>
-          <article class="why-card">
-            <h3 class="why-card__title">Luxury Medical Spa Experience</h3>
-            <p class="why-card__body">Clean, sleek and modern atmosphere where treatments are comfortable and relaxing.
-            </p>
-          </article>
-          <article class="why-card">
-            <h3 class="why-card__title">Advanced Technology and Products</h3>
-            <p class="why-card__body">Technology hand-selected for science-based results and superior comfort.</p>
-          </article>
-        </div>
-        <div class="why__cta">
-          <a href="#book" class="btn btn--plum">Get Expert Care</a>
-        </div>
+        <p style="font-size:16px;font-weight:700;color:var(--fg);text-align:center;margin-bottom:18px;">Why choose us:</p>
+        <ul class="why-bullets reveal">
+          <li><strong>[Bold label:]</strong> [Supporting sentence.]</li>
+          <li><strong>[Bold label:]</strong> [Supporting sentence.]</li>
+          <li><strong>[Bold label:]</strong> [Supporting sentence.]</li>
+          <li><strong>[Bold label:]</strong> [Supporting sentence.]</li>
+        </ul>
       </div>
     </section>
 
-    <!-- =====================================================
-         8. TESTIMONIALS
-    ====================================================== -->
+    <!-- 7. TESTIMONIALS — same card pattern as location landers (stars + quote + author) -->
     <section class="section section--light" id="testimonials" aria-labelledby="testimonials-title">
       <div class="container">
         <div class="sec-head">
@@ -1586,27 +1677,13 @@
         <div class="testimonials-grid reveal">
           <article class="testimonial-card">
             <div class="testimonial-card__stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p class="testimonial-card__text">&ldquo;This was my first time visiting, and I had an amazing experience! The
-              staff was incredibly nice and welcoming, which made me feel comfortable right away. Everyone was friendly
-              and helpful throughout my visit. I&rsquo;ll definitely be coming back and would highly recommend it to
-              others!&rdquo;</p>
-            <div class="testimonial-card__author">&#8212; Flor K.</div>
+            <p class="testimonial-card__text">&ldquo;[Patient quote from markdown. Duplicate this &lt;article&gt; block for each review.]&rdquo;</p>
+            <div class="testimonial-card__author">&#8212; [Name]</div>
           </article>
           <article class="testimonial-card">
             <div class="testimonial-card__stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p class="testimonial-card__text">&ldquo;I must say, each encounter I have had in the Sioux City location has
-              been wonderful. From the front desk to the estheticians, each lady is knowledgeable and kind. Any question
-              or concern I have about a product or procedure is explained in an easily understood way. I'm looking forward
-              to meeting with the newest Sioux City member.&rdquo;</p>
-            <div class="testimonial-card__author">&#8212; Deb G.C.</div>
-          </article>
-          <article class="testimonial-card">
-            <div class="testimonial-card__stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p class="testimonial-card__text">&ldquo;A very welcoming group of professionals! I had several different
-              services and providers at the Sioux City location, and I am very happy with all of them and the results.
-              There was not a long wait to get scheduled. The providers were very detailed and very thorough during their
-              initial assessments, all the way through the actual procedures. &#10084;&#65039;&rdquo;</p>
-            <div class="testimonial-card__author">&#8212; Paula W.</div>
+            <p class="testimonial-card__text">&ldquo;[Second testimonial.]&rdquo;</p>
+            <div class="testimonial-card__author">&#8212; [Name]</div>
           </article>
         </div>
         <div class="testimonials__footer">
@@ -1615,14 +1692,11 @@
       </div>
     </section>
 
-    <!-- =====================================================
-         9. BEFORE & AFTER
-    ====================================================== -->
+    <!-- 8. BEFORE & AFTER — gallery placeholder -->
     <section class="section" id="results" aria-labelledby="results-title">
       <div class="container">
         <div class="sec-head">
           <h2 class="sec-head__title" id="results-title">Before &amp; After</h2>
-          <p class="sec-head__sub">Real results from real patients at Lazaderm Sioux City.</p>
         </div>
         <div class="ba-placeholder reveal" aria-label="Before and after gallery placeholder">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -1630,14 +1704,12 @@
             <path stroke-linecap="round" stroke-linejoin="round"
               d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
           </svg>
-          <p>Gallery &mdash; Add Before &amp; After Photos Here</p>
+          <p>Add gallery.</p>
         </div>
       </div>
     </section>
 
-    <!-- =====================================================
-         10. FAQ
-    ====================================================== -->
+    <!-- 9. FAQ — duplicate .faq-item blocks; keep fq1, fq2, … ids unique -->
     <section class="section section--light" id="faq" aria-labelledby="faq-title">
       <div class="container">
         <div class="sec-head">
@@ -1647,87 +1719,55 @@
 
           <div class="faq-item" role="listitem">
             <button class="faq-question" aria-expanded="false" aria-controls="fq1">
-              <span class="faq-question-text">Do you offer specials?</span>
+              <span class="faq-question-text">[FAQ question one from markdown]</span>
               <span class="faq-icon" aria-hidden="true">
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                   <path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
                 </svg>
               </span>
             </button>
-            <div class="faq-answer" id="fq1">Yes, we often offer specials and promotions for treatments like injectables
-              and CoolSculpting. You can also become an Alle member to receive Alle Wallet Promotions. Learn about all of
-              these and more on our <a href="https://lazaderm.com/specials" rel="noopener noreferrer"
-                target="_blank">Specials</a> page.</div>
+            <div class="faq-answer" id="fq1">[Answer paragraph.]</div>
           </div>
 
           <div class="faq-item" role="listitem">
             <button class="faq-question" aria-expanded="false" aria-controls="fq2">
-              <span class="faq-question-text">Who will perform my treatments?</span>
+              <span class="faq-question-text">[FAQ question two]</span>
               <span class="faq-icon" aria-hidden="true">
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                   <path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
                 </svg>
               </span>
             </button>
-            <div class="faq-answer" id="fq2">Your treatments will be performed by licensed, certified professionals,
-              including a nurse practitioner and trained aestheticians. Every clinical service is supervised by a
-              board-certified physician who serves as the medical director and ensures high standards for safety and
-              care.</div>
+            <div class="faq-answer" id="fq2">[Answer paragraph.]</div>
           </div>
 
           <div class="faq-item" role="listitem">
             <button class="faq-question" aria-expanded="false" aria-controls="fq3">
-              <span class="faq-question-text">How will I know which treatment is right for me?</span>
+              <span class="faq-question-text">[FAQ question three]</span>
               <span class="faq-icon" aria-hidden="true">
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                   <path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
                 </svg>
               </span>
             </button>
-            <div class="faq-answer" id="fq3">Many patients come in with concerns they would like to treat, but are not
-              sure which treatments are best for them. Our job is to listen to your concerns and find treatments that will
-              benefit you and promote the health and wellness of your skin. We offer <a
-                href="https://www.lazadermaz.com/free-consult" rel="noopener noreferrer" target="_blank">free
-                consultations</a> to make this process as easy as possible for you.</div>
-          </div>
-
-          <div class="faq-item" role="listitem">
-            <button class="faq-question" aria-expanded="false" aria-controls="fq4">
-              <span class="faq-question-text">How do I book an appointment?</span>
-              <span class="faq-icon" aria-hidden="true">
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                  <path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-                </svg>
-              </span>
-            </button>
-            <div class="faq-answer" id="fq4">You can call us any time between 9:00 am and 5:00 pm, Monday through Friday,
-              at <a href="tel:7122261000" style="color:var(--plum);font-weight:700;">712-226-1000</a>, or you can reach out
-              24/7 through our <a href="https://lazaderm.zenoti.com/webstoreNew/services/f45c70ec-90bb-4c08-b199-3e132acf5cc1"
-                rel="noopener noreferrer" target="_blank">website</a>. We will get back to you right away!</div>
+            <div class="faq-answer" id="fq3">[Answer paragraph.]</div>
           </div>
 
         </div>
       </div>
     </section>
 
-    <!-- =====================================================
-         11. FINAL CTA
-    ====================================================== -->
+    <!-- 10. FINAL CTA — match markdown “Contact Form” + button label -->
     <section class="cta-section" id="book" aria-labelledby="cta-title">
       <div class="container">
-        <h2 class="cta-section__title" id="cta-title">Start Your Transformation Today</h2>
-        <p class="cta-section__body">Book your free consultation and take the first step. Our Sioux City team is ready to
-          create a personalized treatment plan just for you.</p>
+        <p class="cta-section__body" style="font-size:13px;font-style:italic;color:rgba(255,255,255,0.75);margin-bottom:8px;">Contact Form:</p>
+        <h2 class="cta-section__title" id="cta-title" style="font-size:clamp(28px,4vw,44px);">[Closing form headline, e.g. Claim your free consultation]</h2>
         <div class="form-embed form-embed--cta" aria-labelledby="cta-title">
-          <!-- Replace the paragraph below with your form embed (iframe, script, etc.). -->
           <p class="form-embed__placeholder">Form embed code goes here</p>
         </div>
         <div class="cta-section__actions">
-          <a href="https://lazaderm.zenoti.com/webstoreNew/services/f45c70ec-90bb-4c08-b199-3e132acf5cc1"
-            class="btn btn--dark" rel="noopener noreferrer" target="_blank">Book Now</a>
-          <a href="tel:7122261000" class="btn btn--white">Call 712-226-1000</a>
+          <a href="#" class="btn btn--dark">[Button label, e.g. Book My Consultation]</a>
         </div>
-        <p class="cta-section__phone">Questions? Call us directly: <a href="tel:7122261000">712-226-1000</a></p>
       </div>
     </section>
 
@@ -1758,13 +1798,13 @@
               d="M233.9,26.9c-2.6-4.3-6.2-6.4-10.8-6.4l-2.4,0.3c-3.6,1.1-5.8,2.4-6.6,3.8c-2.3-2.8-5.3-4.2-9-4.2c-2.8,0-5,0.6-6.5,1.8c-0.4-1.2-1.3-1.8-2.6-1.8c-1.8,0-2.7,1-2.9,3.1v23.3c0.3,1.8,1.3,2.7,2.8,2.7h0.2c1.8-0.3,2.7-1.2,2.7-2.6V33.6c0-1.3,0.1-2.2,0.3-3c1.2-3,3.1-4.5,6-4.5h0.3c2.1,0,3.7,0.9,5.1,2.6c0.8,0.7,1.2,2.7,1.2,5.9V47c0,1.4,0.9,2.3,2.7,2.6h0.2c1.5,0,2.4-0.9,2.7-2.7v-15c0-0.4,0.1-0.9,0.2-1.5c1.3-2.8,3.2-4.3,5.6-4.3h1l1.3,0.2c3.1,1.1,4.6,3.1,4.6,6v14.5c0,1.5,0.9,2.4,2.7,2.7h0.2c1.8-0.4,2.7-1.2,2.7-2.5v-15C235.2,30.4,234.8,28.7,233.9,26.9L233.9,26.9z" />
           </svg>
         </a>
-        <p class="footer__sub">Medical Spa &mdash; Sioux City, IA</p>
+        <p class="footer__sub">Physician-directed luxury aesthetic clinic</p>
         <nav class="footer__links" aria-label="Footer navigation">
-          <a href="#" class="footer__link">Treatments</a>
-          <a href="#" class="footer__link">Providers</a>
-          <a href="#" class="footer__link">Specials</a>
-          <a href="#" class="footer__link">Testimonials</a>
-          <a href="#" class="footer__link">Privacy Policy</a>
+          <a href="#about" class="footer__link">About Us</a>
+          <a href="#why-us" class="footer__link">Why Us</a>
+          <a href="#testimonials" class="footer__link">Testimonials</a>
+          <a href="#faq" class="footer__link">FAQ</a>
+          <a href="https://www.lazaderm.com/" class="footer__link">Lazaderm.com</a>
         </nav>
         <p class="footer__copy">&copy; 2026 <a href="https://www.lazaderm.com/" class="footer__copy-link">Lazaderm</a>.
           All rights reserved.</p>
@@ -1774,7 +1814,7 @@
 
   <!-- MOBILE STICKY CTA -->
   <div class="mobile-sticky" aria-label="Book your consultation">
-    <a href="#book" class="btn btn--plum">Request Your Free Consult</a>
+    <a href="#book" class="btn btn--plum">Book Now</a>
   </div>
 
   <!-- =====================================================
