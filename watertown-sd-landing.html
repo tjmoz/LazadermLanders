@@ -109,17 +109,10 @@
       background: var(--bg-section);
     }
 
-    /* Centered section header pattern (wave + serif title) */
+    /* Centered section header pattern */
     .sec-head {
       text-align: center;
       margin-bottom: 52px;
-    }
-
-    .sec-head__wave {
-      display: block;
-      margin: 0 auto 18px;
-      color: var(--plum);
-      opacity: 0.55;
     }
 
     .sec-head__title {
@@ -141,10 +134,6 @@
 
     .sec-head--left {
       text-align: left;
-    }
-
-    .sec-head--left .sec-head__wave {
-      margin-left: 0;
     }
 
     .sec-head--left .sec-head__sub {
@@ -213,20 +202,6 @@
     .btn--sm {
       padding: 9px 20px;
       font-size: 13px;
-    }
-
-    /* ============================================================
-       WAVE DIVIDER SVG (inline, reusable via class)
-    ============================================================ */
-    .wave-divider {
-      display: flex;
-      justify-content: center;
-      margin: 8px 0 20px;
-    }
-
-    .wave-divider svg {
-      width: 56px;
-      height: 22px;
     }
 
     /* ============================================================
@@ -1041,14 +1016,6 @@
       background-size: cover;
     }
 
-    .cta-section__wave {
-      position: relative;
-      color: rgba(255, 255, 255, 0.4);
-      margin-bottom: 20px;
-      display: flex;
-      justify-content: center;
-    }
-
     .cta-section__title {
       font-family: var(--font-display);
       font-size: clamp(36px, 5.5vw, 60px);
@@ -1384,12 +1351,6 @@
             </svg>
           </div>
           <div class="reveal">
-            <div class="wave-divider" style="justify-content:flex-start;" aria-hidden="true">
-              <svg viewBox="0 0 56 22" fill="none" xmlns="http://www.w3.org/2000/svg" width="56" height="22">
-                <path d="M2 18 Q14 4 28 11 Q42 18 54 4" stroke="#473359" stroke-width="2" stroke-linecap="round"
-                  fill="none" />
-              </svg>
-            </div>
             <h2 class="sec-head__title" style="text-align:left;" id="about-title">Your Skin, Your Goals, Our Plan</h2>
             <p style="font-size:16px;color:var(--fg-mid);line-height:1.75;margin-bottom:12px;">
               Every client should have a plan that fits their goals. We start by listening, and then build a roadmap
@@ -1420,12 +1381,6 @@
     <section class="section section--light" id="explore" aria-labelledby="explore-title">
       <div class="container">
         <div class="sec-head">
-          <div class="wave-divider" aria-hidden="true">
-            <svg viewBox="0 0 56 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2 18 Q14 4 28 11 Q42 18 54 4" stroke="#473359" stroke-width="2" stroke-linecap="round"
-                fill="none" />
-            </svg>
-          </div>
           <h2 class="sec-head__title" id="explore-title">Explore Lazaderm</h2>
           <p class="sec-head__sub">Video, carousel of pictures, or similar&mdash;see what a visit to our Watertown medspa
             can include.</p>
@@ -1448,12 +1403,6 @@
     <section class="section section--gray" id="trust" aria-labelledby="trust-title">
       <div class="container">
         <div class="sec-head">
-          <div class="wave-divider" aria-hidden="true">
-            <svg viewBox="0 0 56 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2 18 Q14 4 28 11 Q42 18 54 4" stroke="#473359" stroke-width="2" stroke-linecap="round"
-                fill="none" />
-            </svg>
-          </div>
           <h2 class="sec-head__title" id="trust-title">About Lazaderm</h2>
           <p class="sec-head__sub">What began as a single clinic has grown into a trusted network of locations, all because
             patients keep coming back and bringing their friends.</p>
@@ -1485,12 +1434,6 @@
     <section class="section" id="treatments" aria-labelledby="treatments-title">
       <div class="container">
         <div class="sec-head">
-          <div class="wave-divider" aria-hidden="true">
-            <svg viewBox="0 0 56 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2 18 Q14 4 28 11 Q42 18 54 4" stroke="#473359" stroke-width="2" stroke-linecap="round"
-                fill="none" />
-            </svg>
-          </div>
           <h2 class="sec-head__title" id="treatments-title">Medical Spa Treatments in Watertown</h2>
           <p class="sec-head__sub">Nonsurgical face and body options tailored to your goals by our Watertown team.</p>
         </div>
@@ -1554,12 +1497,6 @@
     <section class="section section--gray" id="providers" aria-labelledby="providers-title">
       <div class="container">
         <div class="sec-head">
-          <div class="wave-divider" aria-hidden="true">
-            <svg viewBox="0 0 56 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2 18 Q14 4 28 11 Q42 18 54 4" stroke="#473359" stroke-width="2" stroke-linecap="round"
-                fill="none" />
-            </svg>
-          </div>
           <h2 class="sec-head__title" id="providers-title">Meet Your Providers in Watertown</h2>
           <p class="sec-head__sub">Your treatments will be performed by certified and licensed practitioners, with all
             care overseen by a medical director.</p>
@@ -1580,12 +1517,6 @@
     <section class="section" id="why-us" aria-labelledby="why-title">
       <div class="container">
         <div class="sec-head">
-          <div class="wave-divider" aria-hidden="true">
-            <svg viewBox="0 0 56 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2 18 Q14 4 28 11 Q42 18 54 4" stroke="#473359" stroke-width="2" stroke-linecap="round"
-                fill="none" />
-            </svg>
-          </div>
           <h2 class="sec-head__title" id="why-title">Why Choose Lazaderm?</h2>
         </div>
         <p class="why__intro">
@@ -1629,12 +1560,6 @@
     <section class="section section--light" id="testimonials" aria-labelledby="testimonials-title">
       <div class="container">
         <div class="sec-head">
-          <div class="wave-divider" aria-hidden="true">
-            <svg viewBox="0 0 56 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2 18 Q14 4 28 11 Q42 18 54 4" stroke="#473359" stroke-width="2" stroke-linecap="round"
-                fill="none" />
-            </svg>
-          </div>
           <h2 class="sec-head__title" id="testimonials-title">What Our Patients Say</h2>
         </div>
         <div class="testimonials-grid reveal">
@@ -1675,12 +1600,6 @@
     <section class="section" id="results" aria-labelledby="results-title">
       <div class="container">
         <div class="sec-head">
-          <div class="wave-divider" aria-hidden="true">
-            <svg viewBox="0 0 56 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2 18 Q14 4 28 11 Q42 18 54 4" stroke="#473359" stroke-width="2" stroke-linecap="round"
-                fill="none" />
-            </svg>
-          </div>
           <h2 class="sec-head__title" id="results-title">Before &amp; After</h2>
           <p class="sec-head__sub">Real results from real patients at Lazaderm Watertown.</p>
         </div>
@@ -1701,12 +1620,6 @@
     <section class="section section--light" id="faq" aria-labelledby="faq-title">
       <div class="container">
         <div class="sec-head">
-          <div class="wave-divider" aria-hidden="true">
-            <svg viewBox="0 0 56 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2 18 Q14 4 28 11 Q42 18 54 4" stroke="#473359" stroke-width="2" stroke-linecap="round"
-                fill="none" />
-            </svg>
-          </div>
           <h2 class="sec-head__title" id="faq-title">Frequently Asked Questions</h2>
         </div>
         <div class="faq-list" role="list">
@@ -1781,12 +1694,6 @@
     ====================================================== -->
     <section class="cta-section" id="book" aria-labelledby="cta-title">
       <div class="container">
-        <div class="cta-section__wave" aria-hidden="true">
-          <svg viewBox="0 0 56 22" fill="none" xmlns="http://www.w3.org/2000/svg" width="56" height="22">
-            <path d="M2 18 Q14 4 28 11 Q42 18 54 4" stroke="rgba(255,255,255,0.5)" stroke-width="2"
-              stroke-linecap="round" fill="none" />
-          </svg>
-        </div>
         <h2 class="cta-section__title" id="cta-title">Schedule Your Free Consultation</h2>
         <p class="cta-section__body">Book your free consultation and take the first step. Our Watertown team is ready to
           create a personalized treatment plan just for you.</p>
