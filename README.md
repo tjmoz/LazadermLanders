@@ -8,7 +8,7 @@ Static HTML marketing landers for **Lazaderm**—location-focused campaigns and 
 |------|-----|--------|
 | **Index** | [`index.html`](index.html) | Internal directory of all landers (`noindex`). |
 | **Location landings** | — | e.g. `chandler-landing.html`, `fargo-nd-landing.html`, `sioux-falls-sd-landing.html`, `sioux-city-ia-landing.html`, `watertown-sd-landing.html` |
-| **Procedure landings** | — | e.g. `coolsculpting-elite-landing.html`, `dermal-fillers-landing.html` |
+| **Procedure landings** | — | e.g. `coolsculpting-elite-landing.html`, `dermal-fillers-landing.html`, `hair-tattoo-removal-landing.html`, `laser-treatments-landing.html` |
 | **Template** | — | [`procedure-landing-template.html`](procedure-landing-template.html) — duplicate to start a new procedure page |
 
 Markdown briefs (`Lazaderm_L_*_BH.md`) sit alongside the HTML and hold copy/source of truth for new or updated pages.
