@@ -329,16 +329,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center top;
-    }
-
-    .hero__bg svg {
-      position: relative;
-      z-index: 1;
-      width: 48px;
-      height: 48px;
-      opacity: 0.75;
-      flex-shrink: 0;
+      object-position: center;
     }
 
     .hero__overlay {
@@ -516,32 +507,162 @@
     }
 
     /* ============================================================
-       MEDIA / EXPLORE SECTION
+       MEDIA / EXPLORE — carousel
     ============================================================ */
-    .explore__placeholder {
-      aspect-ratio: 16/7;
-      background: var(--bg-section);
+    .explore-carousel {
+      position: relative;
+      aspect-ratio: 16 / 7;
       border-radius: var(--radius-card);
-      border: 2px dashed var(--border);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      background: var(--bg-section);
+    }
+
+    .explore-carousel:focus-visible {
+      outline: 2px solid var(--plum);
+      outline-offset: 3px;
+    }
+
+    .explore-carousel__viewport {
+      position: absolute;
+      inset: 0;
+    }
+
+    .explore-carousel__slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.75s ease;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .explore-carousel__slide.is-active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .explore-carousel__slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .explore-carousel__scrim {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 40%;
+      background: linear-gradient(to top, rgba(26, 26, 26, 0.55) 0%, transparent 100%);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .explore-carousel__btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 4;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      color: var(--fg-lt);
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--plum);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+      transition: background var(--trans), color var(--trans), transform var(--trans);
+    }
+
+    .explore-carousel__btn:hover {
+      background: var(--plum);
+      color: #fff;
+      transform: translateY(-50%) scale(1.04);
+    }
+
+    .explore-carousel__btn--prev {
+      left: 14px;
+    }
+
+    .explore-carousel__btn--next {
+      right: 14px;
+    }
+
+    .explore-carousel__btn svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .explore-carousel__dots {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 16px;
+      z-index: 4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       gap: 10px;
     }
 
-    .explore__placeholder svg {
-      width: 40px;
-      height: 40px;
-      opacity: 0.4;
+    .explore-carousel__dot {
+      width: 9px;
+      height: 9px;
+      border-radius: var(--radius-pill);
+      padding: 0;
+      background: rgba(255, 255, 255, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.65);
+      transition: width var(--trans), background var(--trans), border-color var(--trans);
     }
 
-    .explore__placeholder p {
-      font-size: 13px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      opacity: 0.7;
+    .explore-carousel__dot.is-active {
+      width: 28px;
+      background: #fff;
+      border-color: #fff;
+    }
+
+    .explore-carousel__dot:hover {
+      background: rgba(255, 255, 255, 0.85);
+    }
+
+    .explore-carousel__sr {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (max-width: 600px) {
+      .explore-carousel {
+        aspect-ratio: 4 / 3;
+      }
+
+      .explore-carousel__btn--prev {
+        left: 8px;
+      }
+
+      .explore-carousel__btn--next {
+        right: 8px;
+      }
+
+      .explore-carousel__btn {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .explore-carousel__slide {
+        transition: none;
+      }
     }
 
     /* ============================================================
@@ -1165,19 +1286,20 @@
     }
 
     .about-visual {
+      position: relative;
       aspect-ratio: 4/5;
       background: linear-gradient(160deg, var(--bg-section) 0%, #ddd8e4 100%);
       border-radius: var(--radius-card);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--plum);
-      opacity: 0.45;
+      overflow: hidden;
     }
 
-    .about-visual svg {
-      width: 54px;
-      height: 54px;
+    .about-visual img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
     }
 
     .about-checklist {
@@ -1300,13 +1422,10 @@
          1. HERO / INTRO
     ====================================================== -->
     <section class="hero" id="home" aria-labelledby="hero-title">
-      <!-- Background: gradient below, or add <img class="hero__bg-img" src="..." alt=""> for a photo (cover, top-aligned). -->
+      <!-- Background: gradient below, or add <img class="hero__bg-img" src="..." alt=""> for a photo (cover, centered). -->
       <div class="hero__bg" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
-          <path stroke-linecap="round" stroke-linejoin="round"
-            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-        </svg>
-        Hero Image
+        <img class="hero__bg-img" src="images/watertown/hero.jpg" width="1920" height="2560" alt="" decoding="async"
+          fetchpriority="high" />
       </div>
       <!-- Plum overlay with wave texture -->
       <div class="hero__overlay">
@@ -1344,11 +1463,7 @@
       <div class="container">
         <div class="about-grid">
           <div class="about-visual reveal" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-              stroke-width="1.5">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
+            <img src="images/watertown/about.jpg" width="1200" height="2133" alt="" loading="lazy" decoding="async" />
           </div>
           <div class="reveal">
             <h2 class="sec-head__title" style="text-align:left;" id="about-title">Your Skin, Your Goals, Our Plan</h2>
@@ -1382,17 +1497,52 @@
       <div class="container">
         <div class="sec-head">
           <h2 class="sec-head__title" id="explore-title">Explore Lazaderm</h2>
-          <p class="sec-head__sub">Video, carousel of pictures, or similar&mdash;see what a visit to our Watertown medspa
-            can include.</p>
+          <p class="sec-head__sub">Watertown clinic photos plus select images from other Lazaderm locations&mdash;the same
+            care and atmosphere, network-wide.</p>
         </div>
-        <div class="explore__placeholder reveal" aria-label="Video or image carousel placeholder">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-            stroke-width="1.5">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          <p>Video / Image Carousel</p>
+        <div class="explore-carousel reveal" id="watertown-explore-carousel" data-watertown-explore-carousel tabindex="0"
+          role="region" aria-roledescription="carousel" aria-label="Photos of Lazaderm Watertown and the Lazaderm network">
+          <div class="explore-carousel__viewport">
+            <div class="explore-carousel__slide is-active" data-slide="0" aria-hidden="false">
+              <img src="images/watertown/explore-1.jpg" width="1920" height="1440" alt="Lazaderm clinic in Watertown, South Dakota"
+                loading="eager" decoding="async" />
+            </div>
+            <div class="explore-carousel__slide" data-slide="1" aria-hidden="true">
+              <img src="images/chandler/explore-1.jpg" width="1816" height="2420"
+                alt="Lazaderm medspa interior (Chandler, AZ location)" loading="lazy" decoding="async" />
+            </div>
+            <div class="explore-carousel__slide" data-slide="2" aria-hidden="true">
+              <img src="images/fargo/explore-2.jpg" width="1920" height="2560"
+                alt="Treatment area at Lazaderm (Fargo, ND location)" loading="lazy" decoding="async" />
+            </div>
+            <div class="explore-carousel__slide" data-slide="3" aria-hidden="true">
+              <img src="images/sioux-falls/explore-2.jpg" width="1920" height="2560"
+                alt="Lazaderm clinic space (Sioux Falls, SD location)" loading="lazy" decoding="async" />
+            </div>
+          </div>
+          <div class="explore-carousel__scrim" aria-hidden="true"></div>
+          <button type="button" class="explore-carousel__btn explore-carousel__btn--prev"
+            aria-controls="watertown-explore-carousel" aria-label="Previous photo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </button>
+          <button type="button" class="explore-carousel__btn explore-carousel__btn--next"
+            aria-controls="watertown-explore-carousel" aria-label="Next photo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </button>
+          <div class="explore-carousel__dots" role="group" aria-label="Choose photo">
+            <button type="button" class="explore-carousel__dot is-active" aria-label="Photo 1" data-dot="0"
+              aria-current="true"></button>
+            <button type="button" class="explore-carousel__dot" aria-label="Photo 2" data-dot="1"></button>
+            <button type="button" class="explore-carousel__dot" aria-label="Photo 3" data-dot="2"></button>
+            <button type="button" class="explore-carousel__dot" aria-label="Photo 4" data-dot="3"></button>
+          </div>
+          <p class="explore-carousel__sr" id="watertown-explore-carousel-live" aria-live="polite">Photo 1 of 4</p>
         </div>
       </div>
     </section>
@@ -1501,10 +1651,22 @@
           <p class="sec-head__sub">Your treatments will be performed by certified and licensed practitioners, with all
             care overseen by a medical director.</p>
         </div>
-        <div class="reveal" style="text-align:center;max-width:560px;margin:0 auto;">
+        <div class="reveal" style="text-align:center;max-width:560px;margin:0 auto 32px;">
           <p style="font-size:16px;color:var(--fg-mid);line-height:1.75;margin-bottom:0;">
             Meet our licensed Watertown team&mdash;we&rsquo;re here to help you choose the right treatments with confidence.
           </p>
+        </div>
+        <div class="providers-grid person-listing reveal" aria-label="Person listing">
+          <article class="person-item" aria-label="Lornell E. Hansen II, MD">
+            <figure>
+              <picture>
+                <source srcset="https://laza-derm.transforms.svdcdn.com/production/general-uploads/Staff-Pictures/24-Lazaderm-GP_People-600x600_Lornell-Hansen.jpg?w=250&amp;h=250&amp;auto=compress%2Cformat&amp;fit=crop&amp;dm=1718109691&amp;s=29be0f8e91abc3772e461f4081be1c86" type="image/jpeg">
+                <img loading="lazy" src="https://laza-derm.transforms.svdcdn.com/production/general-uploads/Staff-Pictures/24-Lazaderm-GP_People-600x600_Lornell-Hansen.jpg?w=25&amp;h=25&amp;auto=compress%2Cformat&amp;fit=crop&amp;dm=1718109691&amp;s=a1e69d1b9e473fc7f88b7517d6a5b6a7" width="250" height="250" alt="Lornell E. Hansen II, MD, medical director at Lazaderm">
+              </picture>
+            </figure>
+            <h3>Lornell E. Hansen II, MD</h3>
+            <span class="position-title">Medical Director</span>
+          </article>
         </div>
       </div>
     </section>
@@ -1786,6 +1948,116 @@
         });
       }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
       els.forEach(function (el) { io.observe(el); });
+    })();
+
+    // Explore Lazaderm — photo carousel (Watertown)
+    (function () {
+      var root = document.querySelector('[data-watertown-explore-carousel]');
+      if (!root) return;
+
+      var slides = root.querySelectorAll('.explore-carousel__slide');
+      var dots = root.querySelectorAll('.explore-carousel__dot');
+      var live = document.getElementById('watertown-explore-carousel-live');
+      var total = slides.length;
+      var idx = 0;
+      var timer = null;
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      var AUTO_MS = 6000;
+
+      function announce() {
+        if (live) live.textContent = 'Photo ' + (idx + 1) + ' of ' + total;
+      }
+
+      function setSlide(n) {
+        idx = (n + total * 10) % total;
+        slides.forEach(function (s, i) {
+          var on = i === idx;
+          s.classList.toggle('is-active', on);
+          s.setAttribute('aria-hidden', on ? 'false' : 'true');
+        });
+        dots.forEach(function (d, i) {
+          var on = i === idx;
+          d.classList.toggle('is-active', on);
+          if (on) d.setAttribute('aria-current', 'true');
+          else d.removeAttribute('aria-current');
+        });
+        announce();
+      }
+
+      function next() { setSlide(idx + 1); }
+      function prev() { setSlide(idx - 1); }
+
+      function startAutoplay() {
+        stopAutoplay();
+        if (reduceMotion.matches) return;
+        timer = setInterval(next, AUTO_MS);
+      }
+
+      function stopAutoplay() {
+        if (timer) clearInterval(timer);
+        timer = null;
+      }
+
+      root.querySelector('.explore-carousel__btn--next').addEventListener('click', function () {
+        next();
+        startAutoplay();
+      });
+      root.querySelector('.explore-carousel__btn--prev').addEventListener('click', function () {
+        prev();
+        startAutoplay();
+      });
+
+      dots.forEach(function (d, i) {
+        d.addEventListener('click', function () {
+          setSlide(i);
+          startAutoplay();
+        });
+      });
+
+      root.addEventListener('mouseenter', stopAutoplay);
+      root.addEventListener('mouseleave', function () {
+        if (root.dataset.carouselInView === '1') startAutoplay();
+      });
+      root.addEventListener('focusin', stopAutoplay);
+      root.addEventListener('focusout', function (e) {
+        if (!root.contains(e.relatedTarget) && root.dataset.carouselInView === '1') startAutoplay();
+      });
+
+      root.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight') {
+          e.preventDefault();
+          next();
+          startAutoplay();
+        }
+        if (e.key === 'ArrowLeft') {
+          e.preventDefault();
+          prev();
+          startAutoplay();
+        }
+      });
+
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            root.dataset.carouselInView = '1';
+            startAutoplay();
+          } else {
+            root.dataset.carouselInView = '0';
+            stopAutoplay();
+          }
+        });
+      }, { threshold: 0.2 });
+
+      io.observe(root);
+
+      if (reduceMotion.addEventListener) {
+        reduceMotion.addEventListener('change', function () {
+          if (reduceMotion.matches) stopAutoplay();
+          else if (root.dataset.carouselInView === '1') startAutoplay();
+        });
+      }
+
+      setSlide(0);
     })();
 
     // Smooth scroll with nav offset
