@@ -329,16 +329,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center top;
-    }
-
-    .hero__bg svg {
-      position: relative;
-      z-index: 1;
-      width: 48px;
-      height: 48px;
-      opacity: 0.75;
-      flex-shrink: 0;
+      object-position: center;
     }
 
     .hero__overlay {
@@ -884,26 +875,64 @@
     /* ============================================================
        BEFORE & AFTER
     ============================================================ */
-    .ba-placeholder {
-      background: var(--bg-section);
-      border: 2px dashed var(--border);
+    .ba-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      align-items: start;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .ba-gallery--three {
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 1320px;
+    }
+
+    .ba-gallery__item {
+      margin: 0;
       border-radius: var(--radius-card);
-      padding: 80px 40px;
-      text-align: center;
-      color: var(--fg-lt);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-card);
+      background: var(--bg);
     }
 
-    .ba-placeholder svg {
-      width: 44px;
-      height: 44px;
-      margin: 0 auto 14px;
-      opacity: 0.35;
+    .ba-gallery__item img {
+      display: block;
+      width: 100%;
+      height: auto;
     }
 
-    .ba-placeholder p {
+    .ba-gallery__cap {
+      padding: 12px 16px 16px;
       font-size: 13px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+      color: var(--fg-mid);
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    .ba-disclaimer {
+      text-align: center;
+      font-size: 13px;
+      color: var(--fg-lt);
+      margin-top: 24px;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 1100px) {
+      .ba-gallery--three {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .ba-gallery {
+        grid-template-columns: 1fr;
+      }
     }
 
     /* ============================================================
@@ -1169,19 +1198,20 @@
     }
 
     .about-visual {
+      position: relative;
       aspect-ratio: 4/5;
       background: linear-gradient(160deg, var(--bg-section) 0%, #ddd8e4 100%);
       border-radius: var(--radius-card);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--plum);
-      opacity: 0.45;
+      overflow: hidden;
     }
 
-    .about-visual svg {
-      width: 54px;
-      height: 54px;
+    .about-visual img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
     }
 
     .about-checklist {
@@ -1616,11 +1646,8 @@
     <!-- 1. HERO -->
     <section class="hero" id="home" aria-labelledby="hero-title">
       <div class="hero__bg" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
-          <path stroke-linecap="round" stroke-linejoin="round"
-            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-        </svg>
-        Hero Image
+        <img class="hero__bg-img" src="images/procedures/laser-skin-treatments/hero.jpg" width="1512" height="2016" alt=""
+          fetchpriority="high" decoding="async" />
       </div>
       <div class="hero__overlay">
         <div class="container">
@@ -1673,11 +1700,8 @@
       <div class="container">
         <div class="about-grid">
           <div class="about-visual reveal" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-              stroke-width="1.5">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
+            <img src="images/procedures/laser-skin-treatments/take-care.jpg" width="1000" height="650" alt=""
+              loading="lazy" decoding="async" />
           </div>
           <div class="reveal">
             <h2 class="sec-head__title" style="text-align:left;" id="take-care-title">Take Care of Your Skin Because It Takes Care of You</h2>
@@ -1831,15 +1855,28 @@
       <div class="container">
         <div class="sec-head">
           <h2 class="sec-head__title" id="results-title">Before &amp; After</h2>
+          <p class="sec-head__sub">Real patient outcomes. Photos used with permission.</p>
         </div>
-        <div class="ba-placeholder reveal" aria-label="Before and after gallery placeholder">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-            stroke-width="1.5">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-          </svg>
-          <p>Add gallery.</p>
+        <div class="ba-gallery ba-gallery--three reveal" role="group"
+          aria-label="Laser skin treatment before and after photos">
+          <figure class="ba-gallery__item">
+            <img src="images/procedures/laser-skin-treatments/ba-1.jpg" width="870" height="758"
+              alt="Laser skin treatment before and after, patient results" loading="lazy" decoding="async" />
+            <figcaption class="ba-gallery__cap">Before &amp; after &mdash; patient 1</figcaption>
+          </figure>
+          <figure class="ba-gallery__item">
+            <img src="images/procedures/laser-skin-treatments/ba-2.jpg" width="870" height="758"
+              alt="Laser skin treatment before and after, patient results" loading="lazy" decoding="async" />
+            <figcaption class="ba-gallery__cap">Before &amp; after &mdash; patient 2</figcaption>
+          </figure>
+          <figure class="ba-gallery__item">
+            <img src="images/procedures/laser-skin-treatments/ba-3.jpg" width="870" height="758"
+              alt="Laser skin treatment before and after, patient results" loading="lazy" decoding="async" />
+            <figcaption class="ba-gallery__cap">Before &amp; after &mdash; patient 3</figcaption>
+          </figure>
         </div>
+        <p class="ba-disclaimer">Individual results vary. A consultation is required to determine if laser skin treatments
+          are right for you.</p>
       </div>
     </section>
 
