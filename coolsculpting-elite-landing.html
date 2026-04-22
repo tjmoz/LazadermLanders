@@ -289,12 +289,18 @@
     ============================================================ */
     .hero {
       position: relative;
-      min-height: 100vh;
-      min-height: 100dvh;
-      display: flex;
-      align-items: flex-end;
+      height: 50vh;
+      height: 50dvh;
       overflow: hidden;
       background: #c8c2cc;
+    }
+
+    /* Above 1920px viewports — give the banner more room */
+    @media (min-width: 1921px) {
+      .hero {
+        height: 70vh;
+        height: 70dvh;
+      }
     }
 
     .hero__bg {
@@ -436,17 +442,12 @@
         min-width: auto;
         width: 100%;
       }
-
-      .hero {
-        min-height: 85vh;
-        min-height: 85dvh;
-      }
     }
 
     @media (max-width: 600px) {
       .hero {
-        min-height: 80vh;
-        min-height: 80dvh;
+        height: 30vh;
+        height: 30dvh;
       }
     }
 
@@ -1727,12 +1728,16 @@
   <main>
 
     <!-- 1. HERO -->
-    <section class="hero" id="home" aria-labelledby="hero-title">
+    <section class="hero" id="home" aria-hidden="true">
+      <!-- Hero image banner (standalone) -->
       <div class="hero__bg" aria-hidden="true">
         <img class="hero__bg-img" src="images/procedures/coolsculpting-elite/hero.jpg" width="1000" height="667" alt=""
           decoding="async" fetchpriority="high" />
       </div>
-      <div class="hero__overlay">
+    </section>
+
+    <!-- Plum intro section with heading + lead form -->
+    <section class="hero__overlay" aria-labelledby="hero-title">
         <div class="container">
           <div class="hero__content">
             <div class="hero__text">
@@ -1794,7 +1799,6 @@
             </div>
           </div>
         </div>
-      </div>
     </section>
 
     <!-- Target + Elite Advantage -->
