@@ -424,43 +424,13 @@
       text-align: center;
     }
 
-    .hero__form-cta {
-      align-self: center;
-    }
-
-    .form-embed {
-      border-radius: 12px;
-      padding: 28px 24px;
-      text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 140px;
-    }
-
     .form-embed--hero {
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px dashed rgba(255, 255, 255, 0.45);
       min-width: 260px;
-      min-height: 300px;
-      backdrop-filter: blur(6px);
-    }
-
-    .form-embed__placeholder {
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.65);
-      letter-spacing: 0.02em;
-      margin: 0;
-      line-height: 1.5;
     }
 
     .form-embed--cta {
-      max-width: 520px;
+      max-width: 500px;
       margin: 0 auto 36px;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px dashed rgba(255, 255, 255, 0.4);
-      min-height: 200px;
-      position: relative;
     }
 
     @media (max-width: 900px) {
@@ -489,6 +459,267 @@
         min-height: 80dvh;
       }
     }
+
+    /* ============================================================
+       LEAD FORM (hero + CTA)
+    ============================================================ */
+    .lazaderm-form {
+      width: 100%;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      background: #fff;
+      border-radius: 14px;
+      padding: 26px 22px 20px;
+      box-shadow: 0 14px 40px rgba(52, 37, 72, 0.28), 0 2px 6px rgba(0, 0, 0, 0.08);
+      position: relative;
+      overflow: hidden;
+      text-align: left;
+    }
+
+    .lazaderm-form__heading {
+      font-family: var(--font-display);
+      font-size: 35px;
+      font-weight: 500;
+      color: var(--plum);
+      line-height: 1.2;
+      margin: 0 0 30px;
+      text-align: center;
+    }
+
+    .lazaderm-form__field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+
+    .lazaderm-form__label {
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--plum);
+    }
+
+    .lazaderm-form__label .req {
+      color: #b23a48;
+      margin-left: 2px;
+    }
+
+    .lazaderm-form__input,
+    .lazaderm-form__select,
+    .lazaderm-form__textarea {
+      font-family: var(--font-body);
+      font-size: 15px;
+      color: var(--fg);
+      background: var(--bg-light);
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+      width: 100%;
+      min-height: 46px;
+      transition: border-color var(--trans), background var(--trans), box-shadow var(--trans);
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    .lazaderm-form__textarea {
+      min-height: 96px;
+      resize: vertical;
+      line-height: 1.5;
+    }
+
+    .lazaderm-form__input:hover,
+    .lazaderm-form__select:hover,
+    .lazaderm-form__textarea:hover {
+      border-color: #c7c7d0;
+    }
+
+    .lazaderm-form__input:focus,
+    .lazaderm-form__select:focus,
+    .lazaderm-form__textarea:focus {
+      outline: none;
+      border-color: var(--plum);
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(71, 51, 89, 0.15);
+    }
+
+    .lazaderm-form [aria-invalid="true"] {
+      border-color: #d14343;
+      background: #fff5f5;
+    }
+
+    .lazaderm-form [aria-invalid="true"]:focus {
+      border-color: #d14343;
+      box-shadow: 0 0 0 3px rgba(209, 67, 67, 0.2);
+    }
+
+    .lazaderm-form__banner {
+      display: none;
+      background: #fdecea;
+      border: 1px solid #f5b5b0;
+      color: #9c2b2b;
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-size: 13px;
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    .lazaderm-form__banner.is-visible {
+      display: block;
+    }
+
+    .lazaderm-form__error {
+      display: none;
+      font-size: 12px;
+      color: #9c2b2b;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    .lazaderm-form__error.is-visible {
+      display: block;
+    }
+
+    .lazaderm-form__input::placeholder,
+    .lazaderm-form__textarea::placeholder {
+      color: var(--fg-lt);
+    }
+
+    .lazaderm-form__select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23473359' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 38px;
+      cursor: pointer;
+    }
+
+    .lazaderm-form__select:required:invalid {
+      color: var(--fg-lt);
+    }
+
+    .lazaderm-form__consent {
+      margin: 4px 0 10px;
+    }
+
+    .lazaderm-form__consent-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .lazaderm-form__checkbox {
+      appearance: none;
+      -webkit-appearance: none;
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      border: 1.5px solid var(--border);
+      border-radius: 4px;
+      background: var(--bg-light);
+      cursor: pointer;
+      position: relative;
+      transition: border-color var(--trans), background var(--trans), box-shadow var(--trans);
+    }
+
+    .lazaderm-form__checkbox:hover {
+      border-color: var(--plum);
+    }
+
+    .lazaderm-form__checkbox:checked {
+      background: var(--plum);
+      border-color: var(--plum);
+    }
+
+    .lazaderm-form__checkbox:checked::after {
+      content: "";
+      position: absolute;
+      top: 1px;
+      left: 5px;
+      width: 5px;
+      height: 10px;
+      border: solid #fff;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+
+    .lazaderm-form__checkbox:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(71, 51, 89, 0.2);
+    }
+
+    .lazaderm-form__consent-text {
+      font-family: var(--font-body);
+      font-size: 11px;
+      line-height: 1.5;
+      color: var(--fg-mid);
+    }
+
+    .lazaderm-form__submit {
+      display: inline-flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 24px;
+      margin: 10px 0 15px 0;
+      background: var(--plum);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: var(--radius-pill);
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(71, 51, 89, 0.35);
+      transition: background var(--trans), transform var(--trans), box-shadow var(--trans);
+    }
+
+    .lazaderm-form__submit:hover {
+      background: var(--plum-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 10px 24px rgba(52, 37, 72, 0.4);
+    }
+
+    .lazaderm-form__submit:active {
+      transform: translateY(0);
+    }
+
+    .lazaderm-form__submit:focus-visible {
+      outline: 2px solid var(--blue-gray);
+      outline-offset: 2px;
+    }
+
+    /* CTA variant: a touch more padding for the wider centered card */
+    .form-embed--cta .lazaderm-form {
+      padding: 32px 28px 24px;
+    }
+
+    /* Mobile tuning */
+    @media (max-width: 480px) {
+      .lazaderm-form {
+        padding: 22px 18px 18px;
+      }
+
+      .form-embed--cta .lazaderm-form {
+        padding: 24px 20px 20px;
+      }
+
+      .lazaderm-form__input,
+      .lazaderm-form__select,
+      .lazaderm-form__textarea {
+        font-size: 16px; /* prevents iOS auto-zoom on focus */
+      }
+    }
+
 
     /* ============================================================
        INTRO BADGE (under hero)
@@ -1515,9 +1746,56 @@
             <div class="hero__aside">
               <h3 class="hero__form-title" id="hero-form-heading">[Form title, e.g. Claim your free consultation]</h3>
               <div class="form-embed form-embed--hero" aria-labelledby="hero-form-heading">
-                <p class="form-embed__placeholder">Form embed code goes here</p>
+                <form class="lazaderm-form" action="https://formspree.io/f/mvzdwdpg" method="post" novalidate>
+                  <div class="lazaderm-form__banner" role="alert">There was a problem with your submission. Please review the fields below.</div>
+                  <h4 class="lazaderm-form__heading">Book Your Free Consultation</h4>
+
+                  <div class="lazaderm-form__field">
+                    <label class="lazaderm-form__label" for="hero-name">Full Name <span class="req" aria-hidden="true">*</span></label>
+                    <input class="lazaderm-form__input" type="text" id="hero-name" name="full_name" autocomplete="name" required placeholder="Jane Doe" aria-describedby="hero-name-error" />
+                    <span class="lazaderm-form__error" id="hero-name-error"></span>
+                  </div>
+
+                  <div class="lazaderm-form__field">
+                    <label class="lazaderm-form__label" for="hero-email">Email <span class="req" aria-hidden="true">*</span></label>
+                    <input class="lazaderm-form__input" type="email" id="hero-email" name="email" autocomplete="email" required placeholder="you@example.com" aria-describedby="hero-email-error" />
+                    <span class="lazaderm-form__error" id="hero-email-error"></span>
+                  </div>
+
+                  <div class="lazaderm-form__field">
+                    <label class="lazaderm-form__label" for="hero-phone">Phone <span class="req" aria-hidden="true">*</span></label>
+                    <input class="lazaderm-form__input" type="tel" id="hero-phone" name="phone" autocomplete="tel" required placeholder="(555) 123-4567" aria-describedby="hero-phone-error" />
+                    <span class="lazaderm-form__error" id="hero-phone-error"></span>
+                  </div>
+
+                  <div class="lazaderm-form__field">
+                    <label class="lazaderm-form__label" for="hero-location">Preferred Clinic Location <span class="req" aria-hidden="true">*</span></label>
+                    <select class="lazaderm-form__select" id="hero-location" name="location" required aria-describedby="hero-location-error">
+                      <option value="" disabled selected>Choose a location…</option>
+                      <option value="chandler-az">Chandler, AZ</option>
+                      <option value="fargo-nd">Fargo, ND</option>
+                      <option value="sioux-city-ia">Sioux City, IA</option>
+                      <option value="sioux-falls-sd">Sioux Falls, SD</option>
+                      <option value="watertown-sd">Watertown, SD</option>
+                    </select>
+                    <span class="lazaderm-form__error" id="hero-location-error"></span>
+                  </div>
+
+                  <div class="lazaderm-form__field">
+                    <label class="lazaderm-form__label" for="hero-message">Please share any details, concerns, or questions</label>
+                    <textarea class="lazaderm-form__textarea" id="hero-message" name="message" rows="3" placeholder="Tell us what you're hoping to achieve…"></textarea>
+                  </div>
+
+                  <div class="lazaderm-form__consent">
+                    <label class="lazaderm-form__consent-label" for="hero-consent">
+                      <input type="checkbox" class="lazaderm-form__checkbox" id="hero-consent" name="marketing_consent" value="yes" />
+                      <span class="lazaderm-form__consent-text">Yes, I agree to receive marketing communications (email, SMS/text, and phone calls) from Lazaderm regarding promotions, new services, and offers. Standard messaging rates may apply. I may unsubscribe at any time. Consent is not a condition of purchase.</span>
+                    </label>
+                  </div>
+
+                  <button type="submit" class="lazaderm-form__submit">Request My Free Consultation</button>
+                </form>
               </div>
-              <a href="#book" class="btn btn--dark hero__form-cta">Book Now</a>
             </div>
           </div>
         </div>
@@ -1761,7 +2039,55 @@
       <div class="container">
         <h2 class="cta-section__title" id="cta-title" style="font-size:clamp(28px,4vw,44px);">[Closing form headline, e.g. Claim your free consultation]</h2>
         <div class="form-embed form-embed--cta" aria-labelledby="cta-title">
-          <p class="form-embed__placeholder">Form embed code goes here</p>
+          <form class="lazaderm-form" action="https://formspree.io/f/mvzdwdpg" method="post" novalidate>
+            <div class="lazaderm-form__banner" role="alert">There was a problem with your submission. Please review the fields below.</div>
+            <h3 class="lazaderm-form__heading">Book Your Free Consultation</h3>
+
+            <div class="lazaderm-form__field">
+              <label class="lazaderm-form__label" for="cta-name">Full Name <span class="req" aria-hidden="true">*</span></label>
+              <input class="lazaderm-form__input" type="text" id="cta-name" name="full_name" autocomplete="name" required placeholder="Jane Doe" aria-describedby="cta-name-error" />
+              <span class="lazaderm-form__error" id="cta-name-error"></span>
+            </div>
+
+            <div class="lazaderm-form__field">
+              <label class="lazaderm-form__label" for="cta-email">Email <span class="req" aria-hidden="true">*</span></label>
+              <input class="lazaderm-form__input" type="email" id="cta-email" name="email" autocomplete="email" required placeholder="you@example.com" aria-describedby="cta-email-error" />
+              <span class="lazaderm-form__error" id="cta-email-error"></span>
+            </div>
+
+            <div class="lazaderm-form__field">
+              <label class="lazaderm-form__label" for="cta-phone">Phone <span class="req" aria-hidden="true">*</span></label>
+              <input class="lazaderm-form__input" type="tel" id="cta-phone" name="phone" autocomplete="tel" required placeholder="(555) 123-4567" aria-describedby="cta-phone-error" />
+              <span class="lazaderm-form__error" id="cta-phone-error"></span>
+            </div>
+
+            <div class="lazaderm-form__field">
+              <label class="lazaderm-form__label" for="cta-location">Preferred Clinic Location <span class="req" aria-hidden="true">*</span></label>
+              <select class="lazaderm-form__select" id="cta-location" name="location" required aria-describedby="cta-location-error">
+                <option value="" disabled selected>Choose a location…</option>
+                <option value="chandler-az">Chandler, AZ</option>
+                <option value="fargo-nd">Fargo, ND</option>
+                <option value="sioux-city-ia">Sioux City, IA</option>
+                <option value="sioux-falls-sd">Sioux Falls, SD</option>
+                <option value="watertown-sd">Watertown, SD</option>
+              </select>
+              <span class="lazaderm-form__error" id="cta-location-error"></span>
+            </div>
+
+            <div class="lazaderm-form__field">
+              <label class="lazaderm-form__label" for="cta-message">Please share any details, concerns, or questions</label>
+              <textarea class="lazaderm-form__textarea" id="cta-message" name="message" rows="4" placeholder="Tell us what you're hoping to achieve…"></textarea>
+            </div>
+
+            <div class="lazaderm-form__consent">
+              <label class="lazaderm-form__consent-label" for="cta-consent">
+                <input type="checkbox" class="lazaderm-form__checkbox" id="cta-consent" name="marketing_consent" value="yes" />
+                <span class="lazaderm-form__consent-text">Yes, I agree to receive marketing communications (email, SMS/text, and phone calls) from Lazaderm regarding promotions, new services, and offers. Standard messaging rates may apply. I may unsubscribe at any time. Consent is not a condition of purchase.</span>
+              </label>
+            </div>
+
+            <button type="submit" class="lazaderm-form__submit">Request My Free Consultation</button>
+          </form>
         </div>
         <div class="cta-section__actions">
           <a href="#" class="btn btn--dark">[Button label, e.g. Book My Consultation]</a>
@@ -1859,6 +2185,103 @@
             e.preventDefault();
             var offset = document.getElementById('nav').offsetHeight + 8;
             window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
+          }
+        });
+      });
+    })();
+  </script>
+
+  <script>
+    /* Lead form validation — inline banner + per-field error messages.
+       Works for every .lazaderm-form on the page. */
+    (function () {
+      var forms = document.querySelectorAll('.lazaderm-form');
+      if (!forms.length) return;
+
+      var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      function validate(field) {
+        var val = (field.value || '').trim();
+        if (!val) return 'This field is required';
+        if (field.type === 'email' && !emailRe.test(val)) {
+          return 'Please enter a valid email address';
+        }
+        if (field.type === 'tel') {
+          var digits = val.replace(/\D/g, '');
+          if (digits.length < 7) return 'Please enter a valid phone number';
+        }
+        return null;
+      }
+
+      function errorElFor(field) {
+        var id = field.getAttribute('aria-describedby');
+        return id ? document.getElementById(id) : null;
+      }
+
+      function showError(field, msg) {
+        field.setAttribute('aria-invalid', 'true');
+        var errEl = errorElFor(field);
+        if (errEl) {
+          errEl.textContent = msg;
+          errEl.classList.add('is-visible');
+        }
+      }
+
+      function clearError(field) {
+        field.removeAttribute('aria-invalid');
+        var errEl = errorElFor(field);
+        if (errEl) {
+          errEl.textContent = '';
+          errEl.classList.remove('is-visible');
+        }
+      }
+
+      Array.prototype.forEach.call(forms, function (form) {
+        var banner = form.querySelector('.lazaderm-form__banner');
+        var requiredFields = form.querySelectorAll('[required]');
+
+        // Clear a field's error (and hide the banner) as soon as the user edits it
+        Array.prototype.forEach.call(requiredFields, function (f) {
+          var handler = function () {
+            clearError(f);
+            if (banner) banner.classList.remove('is-visible');
+          };
+          f.addEventListener('input', handler);
+          f.addEventListener('change', handler);
+        });
+
+        form.addEventListener('submit', function (e) {
+          var hasError = false;
+          var firstInvalid = null;
+
+          Array.prototype.forEach.call(requiredFields, function (f) {
+            var msg = validate(f);
+            if (msg) {
+              showError(f, msg);
+              hasError = true;
+              if (!firstInvalid) firstInvalid = f;
+            } else {
+              clearError(f);
+            }
+          });
+
+          if (hasError) {
+            e.preventDefault();
+            if (banner) {
+              banner.classList.add('is-visible');
+              if (typeof banner.scrollIntoView === 'function') {
+                banner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              }
+            }
+            if (firstInvalid && typeof firstInvalid.focus === 'function') {
+              // Small delay so the smooth-scroll and focus don't fight each other
+              setTimeout(function () {
+                try { firstInvalid.focus({ preventScroll: true }); }
+                catch (err) { firstInvalid.focus(); }
+              }, 300);
+            }
+          } else if (banner) {
+            banner.classList.remove('is-visible');
           }
         });
       });
