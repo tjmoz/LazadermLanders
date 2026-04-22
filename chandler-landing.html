@@ -289,10 +289,18 @@
     ============================================================ */
     .hero {
       position: relative;
-      height: 70vh;
-      height: 70dvh;
+      height: 50vh;
+      height: 50dvh;
       overflow: hidden;
       background: #c8c2cc;
+    }
+
+    /* Above 1920px viewports — give the banner more room */
+    @media (min-width: 1921px) {
+      .hero {
+        height: 70vh;
+        height: 70dvh;
+      }
     }
 
     .hero__bg {
@@ -434,17 +442,12 @@
         min-width: auto;
         width: 100%;
       }
-
-      .hero {
-        height: 55vh;
-        height: 55dvh;
-      }
     }
 
     @media (max-width: 600px) {
       .hero {
-        height: 45vh;
-        height: 45dvh;
+        height: 30vh;
+        height: 30dvh;
       }
     }
 
